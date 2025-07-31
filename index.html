@@ -5,159 +5,219 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pruning Guide Tool</title>
     <style>
-        body {
-            font-family: 'Georgia', serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
+        #pruning-app {
+          font-family: 'Libre Baskerville', Georgia, serif;
+          background-color: #f8f5f0;
+          margin: 0;
+          padding: 20px;
+          color: #333;
+          line-height: 1.6;
         }
-        .header {
-            background-color: #ad2a24;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        #pruning-app .pruning-tool {
+          max-width: 800px;
+          margin: 0 auto;
+          background: white;
+          border-radius: 5px;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+          overflow: hidden;
+          border: 1px solid #e0d6c2;
         }
-        .header h1 {
-            margin: 0;
-            font-weight: normal;
-            font-size: 28px;
+        #pruning-app .tool-header {
+          background-color: #ad2a24;
+          color: white;
+          padding: 20px;
+          text-align: center;
+          border-bottom: 3px solid #8a221d;
         }
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 4px;
+        #pruning-app .tool-header h1 {
+          margin: 0;
+          font-size: 28px;
+          font-weight: normal;
         }
-        select {
-            padding: 10px 12px;
+        #pruning-app .tool-body {
+          padding: 25px;
+        }
+        #pruning-app .select-container {
+          margin-bottom: 25px;
+        }
+        #pruning-app label {
+          display: block;
+          margin-bottom: 8px;
+          font-size: 18px;
+          color: #555;
+        }
+        #pruning-app select {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #d4c9b1;
+          border-radius: 4px;
+          font-size: 16px;
+          font-family: inherit;
+          background-color: #fcfaf6;
+          color: #333;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
+        #pruning-app select:focus {
+          outline: none;
+          border-color: #ad2a24;
+        }
+        #pruning-app .results {
+          display: none;
+          margin-top: 25px;
+          background-color: #f9f7f2;
+          border-radius: 4px;
+          padding: 20px;
+          border-left: 4px solid #D3D3D3;
+        }
+        #pruning-app .results.active {
+          display: block;
+        }
+        #pruning-app .info-row {
+          margin-bottom: 15px;
+          display: flex;
+          flex-wrap: wrap;
+        }
+        #pruning-app .info-label {
+          font-weight: bold;
+          min-width: 150px;
+          color: #555;
+        }
+        #pruning-app .tag {
+          display: inline-block;
+          margin-right: 8px;
+          margin-bottom: 8px;
+          background-color: white;
+          padding: 6px 12px;
+          border-radius: 20px;
+          border: 1px solid #e0d6c2;
+          font-size: 14px;
+        }
+        #pruning-app .note {
+          font-style: italic;
+          color: #777;
+          margin-top: 20px;
+          font-size: 14px;
+          border-top: 1px solid #e0d6c2;
+          padding-top: 15px;
+        }
+        #pruning-app h3 {
+          color: #ad2a24;
+          margin-top: 0;
+          margin-bottom: 20px;
+          font-weight: normal;
+          font-size: 22px;
+        }
+        
+        /* Mobile-specific styles */
+        @media (max-width: 600px) {
+          #pruning-app {
+            padding: 10px;
+          }
+          #pruning-app .tool-body {
+            padding: 15px;
+          }
+          #pruning-app .tool-header h1 {
+            font-size: 24px;
+          }
+          #pruning-app select {
+            padding: 10px;
             font-size: 16px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            width: 100%;
-            margin-bottom: 20px;
-            font-family: 'Georgia', serif;
-            background-color: #f9f9f9;
-        }
-        .result {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 4px;
-            border-left: 4px solid #ad2a24;
-            display: none;
-        }
-        .result h3 {
-            color: #ad2a24;
-            margin-top: 0;
-            font-weight: normal;
-        }
-        .info-row {
-            margin-bottom: 10px;
-            display: flex;
-        }
-        .info-label {
-            font-weight: bold;
-            min-width: 150px;
-        }
-        .tag {
-            display: inline-block;
-            margin-right: 8px;
-            background-color: #f0f0f0;
-            padding: 3px 8px;
-            border-radius: 3px;
-            font-size: 14px;
-        }
-        .note {
-            font-style: italic;
-            color: #666;
-            margin-top: 20px;
-            font-size: 14px;
+          }
+          #pruning-app .info-row {
+            flex-direction: column;
+          }
+          #pruning-app .info-label {
+            margin-bottom: 5px;
+            min-width: 100%;
+          }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Pruning Guide for Flowering Shrubs & Trees</h1>
-    </div>
-    
-    <div class="container">
-        <label for="plantSelect">Select a Plant:</label>
-        <select id="plantSelect" onchange="displayPlantInfo()">
-            <option value="">-- Choose a plant --</option>
-            <option value="Abelia (modern hybrids)">Abelia (modern hybrids)</option>
-            <option value="Azalea">Azalea</option>
-            <option value="Beautyberry (Callicarpa americana)">Beautyberry (Callicarpa americana)</option>
-            <option value="Bigleaf Hydrangea (H. macrophylla)">Bigleaf Hydrangea (H. macrophylla)</option>
-            <option value="Black Cherry (Prunus serotina)">Black Cherry (Prunus serotina)</option>
-            <option value="Bluebeard (Caryopteris)">Bluebeard (Caryopteris)</option>
-            <option value="Butterfly Bush (Buddleia davidii)">Butterfly Bush (Buddleia davidii)</option>
-            <option value="Camellia (C. japonica)">Camellia (C. japonica)</option>
-            <option value="Camellia (C. sasanqua)">Camellia (C. sasanqua)</option>
-            <option value="Canada Plum (Prunus nigra)">Canada Plum (Prunus nigra)</option>
-            <option value="Climbing Hydrangea (H. anomala petiolaris)">Climbing Hydrangea (H. anomala petiolaris)</option>
-            <option value="Dogwood (Cornus sericea)">Dogwood (Cornus sericea)</option>
-            <option value="Elderberry (Sambucus canadensis)">Elderberry (Sambucus canadensis)</option>
-            <option value="Forsythia">Forsythia</option>
-            <option value="Honeysuckle Bush (Lonicera spp.)">Honeysuckle Bush (Lonicera spp.)</option>
-            <option value="Hyperion Dogwood (Cornus kousa)">Hyperion Dogwood (Cornus kousa)</option>
-            <option value="Lilac (Syringa vulgaris)">Lilac (Syringa vulgaris)</option>
-            <option value="Magnolia (M. x soulangeana)">Magnolia (M. x soulangeana)</option>
-            <option value="Mock Orange (Philadelphus)">Mock Orange (Philadelphus)</option>
-            <option value="Mountain Laurel (Kalmia latifolia)">Mountain Laurel (Kalmia latifolia)</option>
-            <option value="Ninebark (Physocarpus opulifolius)">Ninebark (Physocarpus opulifolius)</option>
-            <option value="Pagoda Dogwood (Cornus alternifolia)">Pagoda Dogwood (Cornus alternifolia)</option>
-            <option value="Panicle Hydrangea (H. paniculata)">Panicle Hydrangea (H. paniculata)</option>
-            <option value="Pin Cherry (Prunus pensylvanica)">Pin Cherry (Prunus pensylvanica)</option>
-            <option value="Potentilla (P. fruticosa)">Potentilla (P. fruticosa)</option>
-            <option value="Quince (Chaenomeles)">Quince (Chaenomeles)</option>
-            <option value="Red Maple (Acer rubrum)">Red Maple (Acer rubrum)</option>
-            <option value="Reblooming Hydrangea ('Endless Summer')">Reblooming Hydrangea ('Endless Summer')</option>
-            <option value="Rhododendron">Rhododendron</option>
-            <option value="Rose of Sharon (Hibiscus syriacus)">Rose of Sharon (Hibiscus syriacus)</option>
-            <option value="Serviceberry (Amelanchier alnifolia)">Serviceberry (Amelanchier alnifolia)</option>
-            <option value="Smooth Hydrangea (H. arborescens)">Smooth Hydrangea (H. arborescens)</option>
-            <option value="Spirea (S. japonica)">Spirea (S. japonica)</option>
-            <option value="Sumac (Rhus typhina)">Sumac (Rhus typhina)</option>
-            <option value="Summersweet (Clethra alnifolia)">Summersweet (Clethra alnifolia)</option>
-            <option value="Virginia Sweetspire (Itea virginica)">Virginia Sweetspire (Itea virginica)</option>
-            <option value="Viburnum (V. carlesii)">Viburnum (V. carlesii)</option>
-            <option value="Witch Hazel (Hamamelis virginiana)">Witch Hazel (Hamamelis virginiana)</option>
-        </select>
-    
-        
-        <div id="result" class="result">
-            <h3 id="plantName"></h3>
-            <div class="info-row">
-                <div class="info-label">Pruning Category:</div>
-                <div id="pruningCategory"></div>
+    <div id="pruning-app">
+        <div class="pruning-tool">
+            <div class="tool-header">
+                <h1>Pruning Guide for Flowering Shrubs & Trees</h1>
             </div>
-            <div class="info-row">
-                <div class="info-label">Pruning Timing:</div>
-                <div id="pruningTiming"></div>
-            </div>
-            <div class="info-row">
-                <div class="info-label">Zone Range:</div>
-                <div id="zoneRange"></div>
-            </div>
-            <div class="info-row">
-                <div class="info-label">Bloom Season:</div>
-                <div id="bloomSeason"></div>
-            </div>
-            <div class="info-row">
-                <div class="info-label">Tags:</div>
-                <div id="tags"></div>
-            </div>
-            <div class="note">
-                Note: Always use clean, sharp pruning tools and make cuts at a 45-degree angle just above a bud.
+            <div class="tool-body">
+                <div class="select-container">
+                    <label for="plantSelect">Select a Plant:</label>
+                    <select id="plantSelect">
+                        <option value="">-- Choose a plant --</option>
+                        <option value="Abelia (modern hybrids)">Abelia (modern hybrids)</option>
+                        <option value="Azalea">Azalea</option>
+                        <option value="Beautyberry (Callicarpa americana)">Beautyberry (Callicarpa americana)</option>
+                        <option value="Bigleaf Hydrangea (H. macrophylla)">Bigleaf Hydrangea (H. macrophylla)</option>
+                        <option value="Black Cherry (Prunus serotina)">Black Cherry (Prunus serotina)</option>
+                        <option value="Bluebeard (Caryopteris)">Bluebeard (Caryopteris)</option>
+                        <option value="Butterfly Bush (Buddleia davidii)">Butterfly Bush (Buddleia davidii)</option>
+                        <option value="Camellia (C. japonica)">Camellia (C. japonica)</option>
+                        <option value="Camellia (C. sasanqua)">Camellia (C. sasanqua)</option>
+                        <option value="Canada Plum (Prunus nigra)">Canada Plum (Prunus nigra)</option>
+                        <option value="Climbing Hydrangea (H. anomala petiolaris)">Climbing Hydrangea (H. anomala petiolaris)</option>
+                        <option value="Dogwood (Cornus sericea)">Dogwood (Cornus sericea)</option>
+                        <option value="Elderberry (Sambucus canadensis)">Elderberry (Sambucus canadensis)</option>
+                        <option value="Forsythia">Forsythia</option>
+                        <option value="Honeysuckle Bush (Lonicera spp.)">Honeysuckle Bush (Lonicera spp.)</option>
+                        <option value="Hyperion Dogwood (Cornus kousa)">Hyperion Dogwood (Cornus kousa)</option>
+                        <option value="Lilac (Syringa vulgaris)">Lilac (Syringa vulgaris)</option>
+                        <option value="Magnolia (M. x soulangeana)">Magnolia (M. x soulangeana)</option>
+                        <option value="Mock Orange (Philadelphus)">Mock Orange (Philadelphus)</option>
+                        <option value="Mountain Laurel (Kalmia latifolia)">Mountain Laurel (Kalmia latifolia)</option>
+                        <option value="Ninebark (Physocarpus opulifolius)">Ninebark (Physocarpus opulifolius)</option>
+                        <option value="Pagoda Dogwood (Cornus alternifolia)">Pagoda Dogwood (Cornus alternifolia)</option>
+                        <option value="Panicle Hydrangea (H. paniculata)">Panicle Hydrangea (H. paniculata)</option>
+                        <option value="Pin Cherry (Prunus pensylvanica)">Pin Cherry (Prunus pensylvanica)</option>
+                        <option value="Potentilla (P. fruticosa)">Potentilla (P. fruticosa)</option>
+                        <option value="Quince (Chaenomeles)">Quince (Chaenomeles)</option>
+                        <option value="Red Maple (Acer rubrum)">Red Maple (Acer rubrum)</option>
+                        <option value="Reblooming Hydrangea ('Endless Summer')">Reblooming Hydrangea ('Endless Summer')</option>
+                        <option value="Rhododendron">Rhododendron</option>
+                        <option value="Rose of Sharon (Hibiscus syriacus)">Rose of Sharon (Hibiscus syriacus)</option>
+                        <option value="Serviceberry (Amelanchier alnifolia)">Serviceberry (Amelanchier alnifolia)</option>
+                        <option value="Smooth Hydrangea (H. arborescens)">Smooth Hydrangea (H. arborescens)</option>
+                        <option value="Spirea (S. japonica)">Spirea (S. japonica)</option>
+                        <option value="Sumac (Rhus typhina)">Sumac (Rhus typhina)</option>
+                        <option value="Summersweet (Clethra alnifolia)">Summersweet (Clethra alnifolia)</option>
+                        <option value="Virginia Sweetspire (Itea virginica)">Virginia Sweetspire (Itea virginica)</option>
+                        <option value="Viburnum (V. carlesii)">Viburnum (V. carlesii)</option>
+                        <option value="Witch Hazel (Hamamelis virginiana)">Witch Hazel (Hamamelis virginiana)</option>
+                    </select>
+                </div>
+                
+                <div id="result" class="results">
+                    <h3 id="plantName"></h3>
+                    <div class="info-row">
+                        <div class="info-label">Pruning Category:</div>
+                        <div id="pruningCategory"></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Pruning Timing:</div>
+                        <div id="pruningTiming"></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Zone Range:</div>
+                        <div id="zoneRange"></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Bloom Season:</div>
+                        <div id="bloomSeason"></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Tags:</div>
+                        <div id="tags"></div>
+                    </div>
+                    <div class="note">
+                        Note: Always use clean, sharp pruning tools and make cuts at a 45-degree angle just above a bud.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        
         const plantData = {
             "Abelia (modern hybrids)": {
                 pruningCategory: "Mixed",
@@ -427,36 +487,34 @@
             }
         };
 
-        function displayPlantInfo() {
-            const plantSelect = document.getElementById("plantSelect");
-            const selectedPlant = plantSelect.value;
-            const resultDiv = document.getElementById("result");
+        document.getElementById('plantSelect').addEventListener('change', function() {
+            const plant = this.value;
+            const resultsDiv = document.getElementById('result');
             
-            if (!selectedPlant) {
-                resultDiv.style.display = "none";
-                return;
+            if (plant && plantData[plant]) {
+                const plantInfo = plantData[plant];
+                
+                document.getElementById("plantName").textContent = plant;
+                document.getElementById("pruningCategory").textContent = plantInfo.pruningCategory;
+                document.getElementById("pruningTiming").textContent = plantInfo.pruningTiming;
+                document.getElementById("zoneRange").textContent = plantInfo.zoneRange;
+                document.getElementById("bloomSeason").textContent = plantInfo.bloomSeason;
+                
+                const tagsContainer = document.getElementById("tags");
+                tagsContainer.innerHTML = "";
+                const tags = plantInfo.tags.split(", ");
+                tags.forEach(tag => {
+                    const span = document.createElement("span");
+                    span.className = "tag";
+                    span.textContent = tag;
+                    tagsContainer.appendChild(span);
+                });
+                
+                resultsDiv.classList.add('active');
+            } else {
+                resultsDiv.classList.remove('active');
             }
-            
-            const plantInfo = plantData[selectedPlant];
-            
-            document.getElementById("plantName").textContent = selectedPlant;
-            document.getElementById("pruningCategory").textContent = plantInfo.pruningCategory;
-            document.getElementById("pruningTiming").textContent = plantInfo.pruningTiming;
-            document.getElementById("zoneRange").textContent = plantInfo.zoneRange;
-            document.getElementById("bloomSeason").textContent = plantInfo.bloomSeason;
-            
-            const tagsContainer = document.getElementById("tags");
-            tagsContainer.innerHTML = "";
-            const tags = plantInfo.tags.split(", ");
-            tags.forEach(tag => {
-                const span = document.createElement("span");
-                span.className = "tag";
-                span.textContent = tag;
-                tagsContainer.appendChild(span);
-            });
-            
-            resultDiv.style.display = "block";
-        }
+        });
     </script>
 </body>
 </html>
