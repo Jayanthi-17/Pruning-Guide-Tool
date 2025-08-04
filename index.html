@@ -81,8 +81,12 @@
         }
         #pruning-app .info-label {
           font-weight: bold;
-          min-width: 150px;
+          width: 200px;
           color: #555;
+        }
+        #pruning-app .info-value {
+          flex: 1;
+          min-width: 200px;
         }
         #pruning-app .tag {
           display: inline-block;
@@ -109,6 +113,24 @@
           font-weight: normal;
           font-size: 22px;
         }
+        #pruning-app .grow-guide-link {
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #f0e7d8;
+          border-radius: 4px;
+          text-align: center;
+        }
+        #pruning-app .grow-guide-link a {
+          color: #ad2a24;
+          text-decoration: none;
+          font-weight: bold;
+        }
+        #pruning-app .grow-guide-link a:hover {
+          text-decoration: underline;
+        }
+        #pruning-app .botanical-name {
+          font-style: italic;
+        }
         
         /* Mobile-specific styles */
         @media (max-width: 600px) {
@@ -130,7 +152,7 @@
           }
           #pruning-app .info-label {
             margin-bottom: 5px;
-            min-width: 100%;
+            width: 100%;
           }
         }
     </style>
@@ -221,23 +243,26 @@
                     <h3 id="plantName"></h3>
                     <div class="info-row">
                         <div class="info-label">Pruning Category:</div>
-                        <div id="pruningCategory"></div>
+                        <div class="info-value" id="pruningCategory"></div>
                     </div>
                     <div class="info-row">
                         <div class="info-label">Pruning Timing:</div>
-                        <div id="pruningTiming"></div>
+                        <div class="info-value" id="pruningTiming"></div>
                     </div>
                     <div class="info-row">
                         <div class="info-label">Zone Range:</div>
-                        <div id="zoneRange"></div>
+                        <div class="info-value" id="zoneRange"></div>
                     </div>
                     <div class="info-row">
                         <div class="info-label">Bloom Season:</div>
-                        <div id="bloomSeason"></div>
+                        <div class="info-value" id="bloomSeason"></div>
                     </div>
                     <div class="info-row">
-                        <div class="info-label">Tags:</div>
-                        <div id="tags"></div>
+                        <div class="info-label">Special Features:</div>
+                        <div class="info-value" id="tags"></div>
+                    </div>
+                    <div class="grow-guide-link">
+                        <p>For more detailed growing information, visit our <a href="https://www.almanac.com/gardening/growing-guides#Shrubs%20and%20Bushes " target="_blank">Shrubs and Bushes Growing Guides</a> or <a href=" https://www.almanac.com/gardening/growing-guides#Trees" target="_blank">Trees Growing Guides</a>.</p>
                     </div>
                     <div class="note">
                         Note: Always use clean, sharp pruning tools and make cuts at a 45-degree angle just above a bud.
@@ -410,7 +435,7 @@
     "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
   },
   {
-    "Plant Name": "Dogwood, Red-Twigged Cornus sericea spp.)",
+    "Plant Name": "Dogwood, Red-Twigged (Cornus sericea spp.)",
     "Pruning Wood Type": "Old Wood",
     "Pruning Timing": "After flowering ends",
     "USDA Zones": "2 to 7",
@@ -466,7 +491,7 @@
     "Tags": "🌸 Ornamental"
   },
   {
-    "Plant Name": "Hydrangea ‘Endless Summer’ (H. macrophylla)",
+    "Plant Name": "Hydrangea 'Endless Summer' (H. macrophylla)",
     "Pruning Wood Type": "Old and New Wood",
     "Pruning Timing": "After flowering ends",
     "USDA Zones": "4–9",
@@ -672,7 +697,7 @@
     "USDA Zones": "4 to 9",
     "Bloom Time": "Early Spring",
     "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental",
-    "Notes": "exception to the usual rule of \"prune after flowering\" for old-wood bloomers, likely due to Serviceberry’s early bloom time (often March or April) a"
+    "Notes": "exception to the usual rule of \"prune after flowering\" for old-wood bloomers, likely due to Serviceberry's early bloom time (often March or April)"
   },
   {
     "Plant Name": "Shrubby Cinquefoil (Potentilla fruticosa)",
@@ -768,7 +793,7 @@
     "Pruning Timing": "After flowering ends",
     "USDA Zones": "4 to 8",
     "Bloom Time": "Late spring to early summer",
-    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+    "Tags": "🌸 Ornamental"
   },
   {
     "Plant Name": "Wisteria, American (W. frutescens)",
@@ -784,7 +809,7 @@
     "Pruning Timing": "After flowering ends",
     "USDA Zones": "3 to 9",
     "Bloom Time": "Late spring to early summer",
-    "Tags": "🌿 Native, 🌸 Ornamental"
+    "Tags": "🌸 Ornamental"
   },
   {
     "Plant Name": "Witch Hazel (Hamamelis virginiana)",
@@ -804,8 +829,14 @@
     const plantInfo = plantData.find(plant => plant['Plant Name'] === selectedPlantName);
 
     if (plantInfo) {
-        // Correct property access using the exact keys from your data
-        document.getElementById("plantName").textContent = plantInfo['Plant Name'];
+        // Format the plant name to italicize the botanical part
+        const plantNameParts = plantInfo['Plant Name'].split(' (');
+        let formattedPlantName = plantNameParts[0];
+        if (plantNameParts.length > 1) {
+            formattedPlantName += ' <span class="botanical-name">(' + plantNameParts[1];
+        }
+        
+        document.getElementById("plantName").innerHTML = formattedPlantName;
         document.getElementById("pruningCategory").textContent = plantInfo['Pruning Wood Type'];
         document.getElementById("pruningTiming").textContent = plantInfo['Pruning Timing'];
         document.getElementById("zoneRange").textContent = plantInfo['USDA Zones'];
