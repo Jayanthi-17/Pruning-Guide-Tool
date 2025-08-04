@@ -109,24 +109,6 @@
           font-weight: normal;
           font-size: 22px;
         }
-        #pruning-app .botanical-name {
-          font-style: italic;
-        }
-        #pruning-app .growing-guide-link {
-          margin-top: 15px;
-          display: inline-block;
-          color: #ad2a24;
-          text-decoration: none;
-          font-weight: bold;
-          border: 1px solid #ad2a24;
-          padding: 8px 15px;
-          border-radius: 4px;
-          transition: all 0.3s ease;
-        }
-        #pruning-app .growing-guide-link:hover {
-          background-color: #ad2a24;
-          color: white;
-        }
         
         /* Mobile-specific styles */
         @media (max-width: 600px) {
@@ -164,43 +146,73 @@
                     <label for="plantSelect">Select a Plant:</label>
                     <select id="plantSelect">
                         <option value="">-- Choose a plant --</option>
-                        <option value="Abelia (modern hybrids)">Abelia <span class="botanical-name">(modern hybrids)</span></option>
-                        <option value="Azalea">Azalea</option>
-                        <option value="Beautyberry (Callicarpa americana)">Beautyberry <span class="botanical-name">(Callicarpa americana)</span></option>
-                        <option value="Bigleaf Hydrangea (Hydrangea macrophylla)">Bigleaf Hydrangea <span class="botanical-name">(Hydrangea macrophylla)</span></option>
-                        <option value="Black Cherry (Prunus serotina)">Black Cherry <span class="botanical-name">(Prunus serotina)</span></option>
-                        <option value="Bluebeard (Caryopteris)">Bluebeard <span class="botanical-name">(Caryopteris)</span></option>
+                        <option value="Abelia (A. x grandiflora)">Abelia <span class="botanical-name">(A. x grandiflora)</span></option>
+                        <option value="Azalea, Non-native/Hybrid (Rhododendron spp.)">Azalea, Non-native/Hybrid <span class="botanical-name">(Rhododendron spp.)</span></option>
+                        <option value="Azalea, Native (Rhododendron spp.)">Azalea, Native <span class="botanical-name">(Rhododendron spp.)</span></option>
+                        <option value="Beautyberry, Asian (Callicarpa spp.)">Beautyberry, Asian <span class="botanical-name">(Callicarpa spp.)</span></option>
+                        <option value="Beautyberry, American (Callicarpa americana)">Beautyberry, American <span class="botanical-name">(Callicarpa americana)</span></option>
+                        <option value="Beautybush (Kolkwitzia amabilis)">Beautybush <span class="botanical-name">(Kolkwitzia amabilis)</span></option>
                         <option value="Butterfly Bush (Buddleia davidii)">Butterfly Bush <span class="botanical-name">(Buddleia davidii)</span></option>
-                        <option value="Camellia (Camellia japonica)">Camellia <span class="botanical-name">(Camellia japonica)</span></option>
-                        <option value="Camellia (Camellia sasanqua)">Camellia <span class="botanical-name">(Camellia sasanqua)</span></option>
-                        <option value="Canada Plum (Prunus nigra)">Canada Plum <span class="botanical-name">(Prunus nigra)</span></option>
-                        <option value="Climbing Hydrangea (Hydrangea anomala petiolaris)">Climbing Hydrangea <span class="botanical-name">(Hydrangea anomala petiolaris)</span></option>
-                        <option value="Dogwood (Cornus sericea)">Dogwood <span class="botanical-name">(Cornus sericea)</span></option>
+                        <option value="Sweetshrub (Calycanthus spp.)">Sweetshrub <span class="botanical-name">(Calycanthus spp.)</span></option>
+                        <option value="Camellia (C. japonica)">Camellia <span class="botanical-name">(C. japonica)</span></option>
+                        <option value="Camellia (C. sasanqua)">Camellia <span class="botanical-name">(C. sasanqua)</span></option>
+                        <option value="Cherry, Black (Prunus serotina)">Cherry, Black <span class="botanical-name">(Prunus serotina)</span></option>
+                        <option value="Cherry, Cornelian (Cornus mas)">Cherry, Cornelian <span class="botanical-name">(Cornus mas)</span></option>
+                        <option value="Cherry, Native (Prunus virginiana, etc.)">Cherry, Native <span class="botanical-name">(Prunus virginiana, etc.)</span></option>
+                        <option value="Cherry (Prunus)">Cherry <span class="botanical-name">(Prunus)</span></option>
+                        <option value="Climbing Hydrangea (H. anomala petiolaris)">Climbing Hydrangea <span class="botanical-name">(H. anomala petiolaris)</span></option>
+                        <option value="Crabapple (Malus spp.)">Crabapple <span class="botanical-name">(Malus spp.)</span></option>
+                        <option value="Crepe Myrtle (Lagerstromia spp.)">Crepe Myrtle <span class="botanical-name">(Lagerstromia spp.)</span></option>
+                        <option value="Deutzia (Deutzia spp.)">Deutzia <span class="botanical-name">(Deutzia spp.)</span></option>
+                        <option value="Dogwood, Kousa (Cornus florida spp.)">Dogwood, Kousa <span class="botanical-name">(Cornus florida spp.)</span></option>
+                        <option value="Flowering Dogwood (Cornus florida)">Flowering Dogwood <span class="botanical-name">(Cornus florida)</span></option>
+                        <option value="Dogwood, Red-Twigged (Cornus sericea spp.)">Dogwood, Red-Twigged <span class="botanical-name">(Cornus sericea spp.)</span></option>
                         <option value="Elderberry (Sambucus canadensis)">Elderberry <span class="botanical-name">(Sambucus canadensis)</span></option>
-                        <option value="Forsythia">Forsythia</option>
-                        <option value="Honeysuckle Bush (Lonicera spp.)">Honeysuckle Bush <span class="botanical-name">(Lonicera spp.)</span></option>
-                        <option value="Hyperion Dogwood (Cornus kousa)">Hyperion Dogwood <span class="botanical-name">(Cornus kousa)</span></option>
-                        <option value="Lilac (Syringa vulgaris)">Lilac <span class="botanical-name">(Syringa vulgaris)</span></option>
-                        <option value="Magnolia (Magnolia x soulangeana)">Magnolia <span class="botanical-name">(Magnolia x soulangeana)</span></option>
-                        <option value="Mock Orange (Philadelphus)">Mock Orange <span class="botanical-name">(Philadelphus)</span></option>
+                        <option value="Forsythia (Forsythia spp.)">Forsythia <span class="botanical-name">(Forsythia spp.)</span></option>
+                        <option value="Fothergilla (Fothergilla spp.)">Fothergilla <span class="botanical-name">(Fothergilla spp.)</span></option>
+                        <option value="Hawthorn, Native (Crataegus spp.)">Hawthorn, Native <span class="botanical-name">(Crataegus spp.)</span></option>
+                        <option value="Honeysuckle, Native (Lonicera sempervirens)">Honeysuckle, Native <span class="botanical-name">(Lonicera sempervirens)</span></option>
+                        <option value="Hydrangea, Bigleaf (H. macrophylla)">Hydrangea, Bigleaf <span class="botanical-name">(H. macrophylla)</span></option>
+                        <option value="Hydrangea 'Endless Summer' (H. macrophylla)">Hydrangea 'Endless Summer' <span class="botanical-name">(H. macrophylla)</span></option>
+                        <option value="Climbing Hydrangea (H. anomala ssp. Petiolaris)">Climbing Hydrangea <span class="botanical-name">(H. anomala ssp. Petiolaris)</span></option>
+                        <option value="Mountain Hydrangea (H. serrata)">Mountain Hydrangea <span class="botanical-name">(H. serrata)</span></option>
+                        <option value="Hydrangea, Oakleaf (H. quercifolia)">Hydrangea, Oakleaf <span class="botanical-name">(H. quercifolia)</span></option>
+                        <option value="Hydrangea, Panicle aka Peegee (H. paniculata)">Hydrangea, Panicle aka Peegee <span class="botanical-name">(H. paniculata)</span></option>
+                        <option value="Hydrangea, Smooth (H. arborescens)">Hydrangea, Smooth <span class="botanical-name">(H. arborescens)</span></option>
+                        <option value="Lilac (Syringa spp.)">Lilac <span class="botanical-name">(Syringa spp.)</span></option>
+                        <option value="Magnolia (Magnolia spp.)">Magnolia <span class="botanical-name">(Magnolia spp.)</span></option>
+                        <option value="Mock Orange (Philadelphus spp.)">Mock Orange <span class="botanical-name">(Philadelphus spp.)</span></option>
                         <option value="Mountain Laurel (Kalmia latifolia)">Mountain Laurel <span class="botanical-name">(Kalmia latifolia)</span></option>
                         <option value="Ninebark (Physocarpus opulifolius)">Ninebark <span class="botanical-name">(Physocarpus opulifolius)</span></option>
-                        <option value="Pagoda Dogwood (Cornus alternifolia)">Pagoda Dogwood <span class="botanical-name">(Cornus alternifolia)</span></option>
-                        <option value="Panicle Hydrangea (Hydrangea paniculata)">Panicle Hydrangea <span class="botanical-name">(Hydrangea paniculata)</span></option>
-                        <option value="Pin Cherry (Prunus pensylvanica)">Pin Cherry <span class="botanical-name">(Prunus pensylvanica)</span></option>
-                        <option value="Potentilla (Potentilla fruticosa)">Potentilla <span class="botanical-name">(Potentilla fruticosa)</span></option>
-                        <option value="Quince (Chaenomeles)">Quince <span class="botanical-name">(Chaenomeles)</span></option>
+                        <option value="Pear, Common Fruiting (Pyrus communis)">Pear, Common Fruiting <span class="botanical-name">(Pyrus communis)</span></option>
+                        <option value="Pear, Asian Fruiting (Pyrus pyrifolia)">Pear, Asian Fruiting <span class="botanical-name">(Pyrus pyrifolia)</span></option>
+                        <option value="Plum, Common Fruiting (Prunus domestica)">Plum, Common Fruiting <span class="botanical-name">(Prunus domestica)</span></option>
+                        <option value="Plum, Native (P. americana)">Plum, Native <span class="botanical-name">(P. americana)</span></option>
+                        <option value="Quince (Chaenomeles spp.)">Quince <span class="botanical-name">(Chaenomeles spp.)</span></option>
                         <option value="Red Maple (Acer rubrum)">Red Maple <span class="botanical-name">(Acer rubrum)</span></option>
-                        <option value="Reblooming Hydrangea (Hydrangea macrophylla 'Endless Summer')">Reblooming Hydrangea <span class="botanical-name">(Hydrangea macrophylla 'Endless Summer')</span></option>
-                        <option value="Rhododendron">Rhododendron</option>
+                        <option value="Redbud (Cercis spp.)">Redbud <span class="botanical-name">(Cercis spp.)</span></option>
+                        <option value="Rhododendron (Rhododendron spp.)">Rhododendron <span class="botanical-name">(Rhododendron spp.)</span></option>
+                        <option value="Roses, Hybrid Tea (Rosas cvs.)">Roses, Hybrid Tea <span class="botanical-name">(Rosas cvs.)</span></option>
+                        <option value="Roses, Modern Shrub (Repeat bloomers)">Roses, Modern Shrub <span class="botanical-name">(Repeat bloomers)</span></option>
+                        <option value="Roses, Old-Fashioned Shrub (Once Bloomers)">Roses, Old-Fashioned Shrub <span class="botanical-name">(Once Bloomers)</span></option>
+                        <option value="Roses, Modern Climbing (Repeat bloomers)">Roses, Modern Climbing <span class="botanical-name">(Repeat bloomers)</span></option>
+                        <option value="Roses, Old-Fashioned Climbing (Once bloomers)">Roses, Old-Fashioned Climbing <span class="botanical-name">(Once bloomers)</span></option>
                         <option value="Rose of Sharon (Hibiscus syriacus)">Rose of Sharon <span class="botanical-name">(Hibiscus syriacus)</span></option>
-                        <option value="Serviceberry (Amelanchier alnifolia)">Serviceberry <span class="botanical-name">(Amelanchier alnifolia)</span></option>
-                        <option value="Smooth Hydrangea (Hydrangea arborescens)">Smooth Hydrangea <span class="botanical-name">(Hydrangea arborescens)</span></option>
-                        <option value="Spirea (Spiraea japonica)">Spirea <span class="botanical-name">(Spiraea japonica)</span></option>
+                        <option value="Serviceberry, Shadblow (Amelanchier spp.)">Serviceberry, Shadblow <span class="botanical-name">(Amelanchier spp.)</span></option>
+                        <option value="Shrubby Cinquefoil (Potentilla fruticosa)">Shrubby Cinquefoil <span class="botanical-name">(Potentilla fruticosa)</span></option>
+                        <option value="Smoketree (Cotinus coggygria)">Smoketree <span class="botanical-name">(Cotinus coggygria)</span></option>
+                        <option value="Spirea (S. thunbergii, S. × vanhouttei, S. prunifolia)">Spirea <span class="botanical-name">(S. thunbergii, S. × vanhouttei, S. prunifolia)</span></option>
+                        <option value="Spirea, Japanese (S. japonica, S. × bumalda)">Spirea, Japanese <span class="botanical-name">(S. japonica, S. × bumalda)</span></option>
+                        <option value="Spirea, Meadowsweet (S. alba)">Spirea, Meadowsweet <span class="botanical-name">(S. alba)</span></option>
                         <option value="Sumac (Rhus typhina)">Sumac <span class="botanical-name">(Rhus typhina)</span></option>
                         <option value="Summersweet (Clethra alnifolia)">Summersweet <span class="botanical-name">(Clethra alnifolia)</span></option>
-                        <option value="Virginia Sweetspire (Itea virginica)">Virginia Sweetspire <span class="botanical-name">(Itea virginica)</span></option>
-                        <option value="Viburnum (Viburnum carlesii)">Viburnum <span class="botanical-name">(Viburnum carlesii)</span></option>
+                        <option value="Sweetspire, Virginia (Itea virginica)">Sweetspire, Virginia <span class="botanical-name">(Itea virginica)</span></option>
+                        <option value="Sweetshrub (Calycanthus floridus)">Sweetshrub <span class="botanical-name">(Calycanthus floridus)</span></option>
+                        <option value="Viburnum, Arrowood (e.g., V. dentatum)">Viburnum, Arrowood <span class="botanical-name">(e.g., V. dentatum)</span></option>
+                        <option value="Viburnum, Asian varieties (e.g., V. carlesii, V. plicatum)">Viburnum, Asian varieties <span class="botanical-name">(e.g., V. carlesii, V. plicatum)</span></option>
+                        <option value="Weigela, Asian varieties (W. florida)">Weigela, Asian varieties <span class="botanical-name">(W. florida)</span></option>
+                        <option value="Wisteria, American (W. frutescens)">Wisteria, American <span class="botanical-name">(W. frutescens)</span></option>
+                        <option value="Wisteria, Asian (W. sinensis, W. floribunda)">Wisteria, Asian <span class="botanical-name">(W. sinensis, W. floribunda)</span></option>
                         <option value="Witch Hazel (Hamamelis virginiana)">Witch Hazel <span class="botanical-name">(Hamamelis virginiana)</span></option>
                     </select>
                 </div>
@@ -224,10 +236,9 @@
                         <div id="bloomSeason"></div>
                     </div>
                     <div class="info-row">
-                        <div class="info-label">Special Features:</div>
-                        <div id="specialFeatures"></div>
+                        <div class="info-label">Tags:</div>
+                        <div id="tags"></div>
                     </div>
-                    <div id="growingGuideLink"></div>
                     <div class="note">
                         Note: Always use clean, sharp pruning tools and make cuts at a 45-degree angle just above a bud.
                     </div>
@@ -237,357 +248,589 @@
     </div>
 
     <script>
-        const plantData = {
-            "Abelia (modern hybrids)": {
-                pruningCategory: "Mixed",
-                pruningTiming: "After bloom or light cut in early spring",
-                zoneRange: "6–9",
-                bloomSeason: "Summer through fall",
-                specialFeatures: "🌸 Long bloom season, 🐝 Pollinator friendly, 🍃 Semi-evergreen",
-                guideLink: "https://www.almanac.com/plant/abelia"
-            },
-            "Azalea": {
-                pruningCategory: "Old Wood",
-                pruningTiming: "Immediately after flowering ends",
-                zoneRange: "5–9",
-                bloomSeason: "Spring",
-                specialFeatures: "🌸 Showy flowers, 🍃 Evergreen varieties",
-                guideLink: "https://www.almanac.com/plant/azaleas"
-            },
-            "Beautyberry (Callicarpa americana)": {
-                pruningCategory: "New Wood",
-                pruningTiming: "Late winter to early spring",
-                zoneRange: "6–10",
-                bloomSeason: "Summer flowers, fall berries",
-                specialFeatures: "🍒 Vibrant purple berries, 🦜 Bird attractant, 🌿 Native",
-                guideLink: "https://www.almanac.com/plant/beautyberry"
-            },
-            "Bigleaf Hydrangea (Hydrangea macrophylla)": {
-                pruningCategory: "Old Wood",
-                pruningTiming: "After flowering in summer",
-                zoneRange: "5–9",
-                bloomSeason: "Summer",
-                specialFeatures: "🌸 Color-changing blooms, 💧 Moisture loving",
-                guideLink: "https://www.almanac.com/plant/hydrangeas"
-            },
-            "Black Cherry (Prunus serotina)": {
-                pruningCategory: "Old Wood",
-                pruningTiming: "After flowering in spring",
-                zoneRange: "3–9",
-                bloomSeason: "Spring",
-                specialFeatures: "🌳 Wildlife value, 🍒 Edible fruit, 🌿 Native",
-                guideLink: "https://www.almanac.com/plant/cherry-trees"
-            },
-            "Bluebeard (Caryopteris)": {
-                pruningCategory: "New Wood",
-                pruningTiming: "Late winter to early spring",
-                zoneRange: "5–9",
-                bloomSeason: "Late summer to fall",
-                specialFeatures: "🐝 Pollinator magnet, 🌿 Drought tolerant, 🔵 True blue flowers",
-                guideLink: "https://www.almanac.com/plant/bluebeard"
-            },
-            "Butterfly Bush (Buddleia davidii)": {
-                pruningCategory: "New Wood",
-                pruningTiming: "Late winter to early spring",
-                zoneRange: "5–9",
-                bloomSeason: "Summer to fall",
-                specialFeatures: "🦋 Butterfly attractant, 🌸 Fragrant, 🚫 Can be invasive",
-                guideLink: "https://www.almanac.com/plant/butterfly-bush"
-            },
-            "Camellia (Camellia japonica)": {
-                pruningCategory: "Mixed",
-                pruningTiming: "After blooming in spring",
-                zoneRange: "7–9",
-                bloomSeason: "Winter to spring",
-                specialFeatures: "🌸 Winter blooms, 🍃 Evergreen, 🏆 Showy flowers",
-                guideLink: "https://www.almanac.com/plant/camellias"
-            },
-            "Camellia (Camellia sasanqua)": {
-                pruningCategory: "Mixed",
-                pruningTiming: "After blooming in fall/winter",
-                zoneRange: "7–9",
-                bloomSeason: "Fall to winter",
-                specialFeatures: "🌸 Early blooms, 🍃 Evergreen, ☀️ More sun tolerant",
-                guideLink: "https://www.almanac.com/plant/camellias"
-            },
-            "Canada Plum (Prunus nigra)": {
-                pruningCategory: "Old Wood",
-                pruningTiming: "After flowering in spring",
-                zoneRange: "3–6",
-                bloomSeason: "Early spring",
-                specialFeatures: "🌸 Early bloomer, 🍒 Edible fruit, 🌿 Native",
-                guideLink: "https://www.almanac.com/plant/plum-trees"
-            },
-            "Climbing Hydrangea (Hydrangea anomala petiolaris)": {
-                pruningCategory: "Old Wood",
-                pruningTiming: "After flowering in summer",
-                zoneRange: "4–8",
-                bloomSeason: "Late spring to early summer",
-                specialFeatures: "🌿 Self-clinging vine, 🌳 Shade tolerant, 🏆 Showy flowers",
-                guideLink: "https://www.almanac.com/plant/climbing-hydrangea"
-            },
-            "Dogwood (Cornus sericea)": {
-                pruningCategory: "Mixed",
-                pruningTiming: "After bloom or winter thinning",
-                zoneRange: "2–7",
-                bloomSeason: "Spring",
-                specialFeatures: "❄️ Winter interest (stems), 🍃 Colorful foliage, 🌿 Native",
-                guideLink: "https://www.almanac.com/plant/dogwood"
-            },
-            "Elderberry (Sambucus canadensis)": {
-                pruningCategory: "Mixed",
-                pruningTiming: "Light pruning after bloom",
-                zoneRange: "3–9",
-                bloomSeason: "Late spring",
-                specialFeatures: "🍒 Edible berries, 🌸 Showy flowers, 🌿 Native",
-                guideLink: "https://www.almanac.com/plant/elderberry"
-            },
-            "Forsythia": {
-                pruningCategory: "Old Wood",
-                pruningTiming: "After flowering in spring",
-                zoneRange: "5–8",
-                bloomSeason: "Early spring",
-                specialFeatures: "🌸 Early bloomer, 💛 Bright yellow flowers, ✂️ Vigorous grower",
-                guideLink: "https://www.almanac.com/plant/forsythia"
-            },
-            "Honeysuckle Bush (Lonicera spp.)": {
-                pruningCategory: "New Wood",
-                pruningTiming: "Late winter to early spring",
-                zoneRange: "4–8",
-                bloomSeason: "Spring to summer",
-                specialFeatures: "🌸 Fragrant flowers, 🦜 Hummingbird attractant, 🍒 Berries (some varieties)",
-                guideLink: "https://www.almanac.com/plant/honeysuckle"
-            },
-            "Hyperion Dogwood (Cornus kousa)": {
-                pruningCategory: "New Wood",
-                pruningTiming: "Late winter to early spring",
-                zoneRange: "5–8",
-                bloomSeason: "Late spring",
-                specialFeatures: "🌸 Showy bracts, 🍃 Disease resistant, 🏆 Improved variety",
-                guideLink: "https://www.almanac.com/plant/kousa-dogwood"
-            },
-            "Lilac (Syringa vulgaris)": {
-                pruningCategory: "Old Wood",
-                pruningTiming: "After flowering in spring",
-                zoneRange: "3–7",
-                bloomSeason: "Mid to late spring",
-                specialFeatures: "🌸 Fragrant flowers, 🏆 Old-fashioned favorite, 🦋 Pollinator friendly",
-                guideLink: "https://www.almanac.com/plant/lilacs"
-            },
-            "Magnolia (Magnolia x soulangeana)": {
-                pruningCategory: "Mixed",
-                pruningTiming: "After blooming in spring",
-                zoneRange: "5–9",
-                bloomSeason: "Early to mid spring",
-                specialFeatures: "🌸 Large showy flowers, 🏆 Specimen tree, 🍃 Unique foliage",
-                guideLink: "https://www.almanac.com/plant/magnolia-trees"
-            },
-            "Mock Orange (Philadelphus)": {
-                pruningCategory: "Old Wood",
-                pruningTiming: "After flowering in summer",
-                zoneRange: "4–8",
-                bloomSeason: "Late spring to early summer",
-                specialFeatures: "🌸 Fragrant flowers, 🏆 Cottage garden staple, ✂️ Fast grower",
-                guideLink: "https://www.almanac.com/plant/mock-orange"
-            },
-            "Mountain Laurel (Kalmia latifolia)": {
-                pruningCategory: "Old Wood",
-                pruningTiming: "After flowering in early summer",
-                zoneRange: "4–9",
-                bloomSeason: "Late spring to early summer",
-                specialFeatures: "🌸 Unique flowers, 🍃 Evergreen, 🌿 Native",
-                guideLink: "https://www.almanac.com/plant/mountain-laurel"
-            },
-            "Ninebark (Physocarpus opulifolius)": {
-                pruningCategory: "Mixed",
-                pruningTiming: "After bloom or early spring",
-                zoneRange: "3–7",
-                bloomSeason: "Late spring to early summer",
-                specialFeatures: "🍃 Colorful foliage, 🌸 Interesting bark, 🌿 Native",
-                guideLink: "https://www.almanac.com/plant/ninebark"
-            },
-            "Pagoda Dogwood (Cornus alternifolia)": {
-                pruningCategory: "Old Wood",
-                pruningTiming: "After flowering in summer",
-                zoneRange: "3–7",
-                bloomSeason: "Late spring to early summer",
-                specialFeatures: "🌸 Layered branching, 🍒 Blue-black berries, 🌿 Native",
-                guideLink: "https://www.almanac.com/plant/pagoda-dogwood"
-            },
-            "Panicle Hydrangea (Hydrangea paniculata)": {
-                pruningCategory: "New Wood",
-                pruningTiming: "Late winter to early spring",
-                zoneRange: "3–8",
-                bloomSeason: "Summer to fall",
-                specialFeatures: "🌸 Long-lasting blooms, ❄️ Winter interest, ☀️ Sun tolerant",
-                guideLink: "https://www.almanac.com/plant/panicle-hydrangea"
-            },
-            "Pin Cherry (Prunus pensylvanica)": {
-                pruningCategory: "Old Wood",
-                pruningTiming: "After flowering in spring",
-                zoneRange: "2–6",
-                bloomSeason: "Early spring",
-                specialFeatures: "🌸 Early bloomer, � Wildlife value, 🌿 Native",
-                guideLink: "https://www.almanac.com/plant/cherry-trees"
-            },
-            "Potentilla (Potentilla fruticosa)": {
-                pruningCategory: "New Wood",
-                pruningTiming: "Late winter to early spring",
-                zoneRange: "2–7",
-                bloomSeason: "Summer to fall",
-                specialFeatures: "🌸 Long bloom season, 🌿 Drought tolerant, ✂️ Low maintenance",
-                guideLink: "https://www.almanac.com/plant/potentilla"
-            },
-            "Quince (Chaenomeles)": {
-                pruningCategory: "Mixed",
-                pruningTiming: "After blooming in spring",
-                zoneRange: "5–8",
-                bloomSeason: "Early spring",
-                specialFeatures: "🌸 Early bloomer, 🍏 Edible fruit (some varieties), 🏆 Thorny varieties",
-                guideLink: "https://www.almanac.com/plant/flowering-quince"
-            },
-            "Red Maple (Acer rubrum)": {
-                pruningCategory: "Old Wood",
-                pruningTiming: "After flowering in spring",
-                zoneRange: "3–9",
-                bloomSeason: "Early spring",
-                specialFeatures: "🍁 Fall color, 🌸 Early flowers, 🌿 Native",
-                guideLink: "https://www.almanac.com/plant/red-maple"
-            },
-            "Reblooming Hydrangea (Hydrangea macrophylla 'Endless Summer')": {
-                pruningCategory: "Mixed",
-                pruningTiming: "Light cuts after each bloom cycle",
-                zoneRange: "4–9",
-                bloomSeason: "Summer to fall",
-                specialFeatures: "🌸 Repeat blooms, 💧 Moisture loving, 🏆 Reliable performer",
-                guideLink: "https://www.almanac.com/plant/endless-summer-hydrangea"
-            },
-            "Rhododendron": {
-                pruningCategory: "Old Wood",
-                pruningTiming: "After flowering in spring",
-                zoneRange: "4–8",
-                bloomSeason: "Spring",
-                specialFeatures: "🌸 Showy flowers, 🍃 Evergreen, 🌳 Large specimens",
-                guideLink: "https://www.almanac.com/plant/rhododendrons"
-            },
-            "Rose of Sharon (Hibiscus syriacus)": {
-                pruningCategory: "New Wood",
-                pruningTiming: "Late winter to early spring",
-                zoneRange: "5–9",
-                bloomSeason: "Summer to fall",
-                specialFeatures: "🌸 Late blooms, 🏆 Hibiscus family, ✂️ Can be pruned to tree form",
-                guideLink: "https://www.almanac.com/plant/rose-of-sharon"
-            },
-            "Serviceberry (Amelanchier alnifolia)": {
-                pruningCategory: "Old Wood",
-                pruningTiming: "After flowering in spring",
-                zoneRange: "3–9",
-                bloomSeason: "Early spring",
-                specialFeatures: "🌸 Early blooms, 🍒 Edible berries, 🍁 Fall color",
-                guideLink: "https://www.almanac.com/plant/serviceberry"
-            },
-            "Smooth Hydrangea (Hydrangea arborescens)": {
-                pruningCategory: "New Wood",
-                pruningTiming: "Late winter to early spring",
-                zoneRange: "3–9",
-                bloomSeason: "Summer",
-                specialFeatures: "🌸 Large white blooms, 🌿 Native, ✂️ Can cut to ground",
-                guideLink: "https://www.almanac.com/plant/smooth-hydrangea"
-            },
-            "Spirea (Spiraea japonica)": {
-                pruningCategory: "New Wood",
-                pruningTiming: "Late winter to early spring",
-                zoneRange: "4–9",
-                bloomSeason: "Summer",
-                specialFeatures: "🌸 Long bloom season, 🍃 Colorful foliage, ✂️ Low maintenance",
-                guideLink: "https://www.almanac.com/plant/spirea"
-            },
-            "Sumac (Rhus typhina)": {
-                pruningCategory: "New Wood",
-                pruningTiming: "Late winter to early spring",
-                zoneRange: "3–8",
-                bloomSeason: "Summer flowers, fall fruit",
-                specialFeatures: "🍁 Brilliant fall color, 🌿 Spreads by suckers, 🦜 Wildlife value",
-                guideLink: "https://www.almanac.com/plant/sumac"
-            },
-            "Summersweet (Clethra alnifolia)": {
-                pruningCategory: "New Wood",
-                pruningTiming: "Late winter to early spring",
-                zoneRange: "3–9",
-                bloomSeason: "Mid to late summer",
-                specialFeatures: "🌸 Fragrant flowers, 🍃 Glossy foliage, 🌿 Native",
-                guideLink: "https://www.almanac.com/plant/summersweet"
-            },
-            "Virginia Sweetspire (Itea virginica)": {
-                pruningCategory: "Mixed",
-                pruningTiming: "After blooming in summer",
-                zoneRange: "5–9",
-                bloomSeason: "Late spring to early summer",
-                specialFeatures: "🌸 Fragrant flowers, 🍁 Maroon fall color, 🌿 Native",
-                guideLink: "https://www.almanac.com/plant/virginia-sweetspire"
-            },
-            "Viburnum (Viburnum carlesii)": {
-                pruningCategory: "Old Wood",
-                pruningTiming: "After flowering in spring",
-                zoneRange: "4–8",
-                bloomSeason: "Spring",
-                specialFeatures: "🌸 Highly fragrant, 🍃 Wrinkled leaves, 🍒 Ornamental berries",
-                guideLink: "https://www.almanac.com/plant/viburnum"
-            },
-            "Witch Hazel (Hamamelis virginiana)": {
-                pruningCategory: "Old Wood",
-                pruningTiming: "After flowering in late winter",
-                zoneRange: "3–8",
-                bloomSeason: "Winter",
-                specialFeatures: "🌸 Winter blooms, 🍁 Fall color, 🌿 Native",
-                guideLink: "https://www.almanac.com/plant/witch-hazel"
-            }
-        };
+        const plantData = [
+  {
+    "Plant Name": "Abelia (A. x grandiflora)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "6 to 9",
+    "Bloom Time": "Summer to Fall",
+    "Tags": "🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Azalea, Non-native/Hybrid (Rhododendron spp.)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "5 to 9",
+    "Bloom Time": "Spring",
+    "Tags": "🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Azalea, Native (Rhododendron spp.)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "4 to 9",
+    "Bloom Time": "Spring",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Beautyberry, Asian (Callicarpa spp.)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "5 to 8",
+    "Bloom Time": "Late spring",
+    "Tags": "🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Beautyberry, American (Callicarpa americana)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "6 to 10",
+    "Bloom Time": "Spring to Summer",
+    "Tags": "🌿 Native, 🐝 Pollinator"
+  },
+  {
+    "Plant Name": "Beautybush (Kolkwitzia amabilis)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "4 to 8",
+    "Bloom Time": "Late spring",
+    "Tags": "🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Butterfly Bush (Buddleia davidii)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "5 to 9",
+    "Bloom Time": "Summer to Fall",
+    "Tags": "🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Sweetshrub (Calycanthus spp.)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "4 to 9",
+    "Bloom Time": "Late spring to early summer",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Camellia (C. japonica)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering",
+    "USDA Zones": "7 to 9",
+    "Bloom Time": "Late winter to early spring",
+    "Tags": "🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Camellia (C. sasanqua)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering",
+    "USDA Zones": "7 to 9",
+    "Bloom Time": "Fall to early winter",
+    "Tags": "🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Cherry, Black (Prunus serotina)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "3 to 9",
+    "Bloom Time": "Spring",
+    "Tags": "🌿 Native, 🐝 Pollinator"
+  },
+  {
+    "Plant Name": "Cherry, Cornelian (Cornus mas)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "4 to 8",
+    "Bloom Time": "Early Spring",
+    "Tags": "🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Cherry, Native (Prunus virginiana, etc.)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "2 to 6",
+    "Bloom Time": "Spring",
+    "Tags": "🌿 Native, 🐝 Pollinator"
+  },
+  {
+    "Plant Name": "Cherry (Prunus)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "5 to 8",
+    "Bloom Time": "Spring",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Climbing Hydrangea (H. anomala petiolaris)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "4 to 8",
+    "Bloom Time": "Late spring to early summer",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Crabapple (Malus spp.)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "4 to 8",
+    "Bloom Time": "Mid to late spring",
+    "Tags": "🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Crepe Myrtle (Lagerstromia spp.)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "6 to 9",
+    "Bloom Time": "Summer",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Deutzia (Deutzia spp.)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "5 to 8",
+    "Bloom Time": "Late spring to early summer",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Dogwood, Kousa (Cornus florida spp.)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "5 to 8",
+    "Bloom Time": "Late spring to early summer",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Flowering Dogwood (Cornus florida)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "5 to 9",
+    "Bloom Time": "Early to mid spring",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Dogwood, Red-Twigged Cornus sericea spp.)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "2 to 7",
+    "Bloom Time": "Late spring",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Elderberry (Sambucus canadensis)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "3 to 9",
+    "Bloom Time": "Late spring–early summer",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Forsythia (Forsythia spp.)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "5 to 8",
+    "Bloom Time": "Early Spring",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Fothergilla (Fothergilla spp.)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "5 to 8",
+    "Bloom Time": "Early to mid spring",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Hawthorn, Native (Crataegus spp.)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "4 to 8",
+    "Bloom Time": "Late spring",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Honeysuckle, Native (Lonicera sempervirens)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter to early spring",
+    "USDA Zones": "4 to 9",
+    "Bloom Time": "Late spring to early summer",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Hydrangea, Bigleaf (H. macrophylla)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "6 to 9",
+    "Bloom Time": "Summer",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Hydrangea ‘Endless Summer’ (H. macrophylla)",
+    "Pruning Wood Type": "Old and New Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "4–9",
+    "Bloom Time": "Summer to Fall",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Climbing Hydrangea (H. anomala ssp. Petiolaris)",
+    "Pruning Wood Type": "OldWood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "4 to 8",
+    "Bloom Time": "Late spring to early summer",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Mountain Hydrangea (H. serrata)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "6 to 8",
+    "Bloom Time": "Early to mid summer",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Hydrangea, Oakleaf (H. quercifolia)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "5 to 9",
+    "Bloom Time": "Late spring to summer",
+    "Tags": "🌿 Native, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Hydrangea, Panicle aka Peegee (H. paniculata)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "3 to 8",
+    "Bloom Time": "Midi to late summer",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Hydrangea, Smooth (H. arborescens)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "3 to 9",
+    "Bloom Time": "Summer",
+    "Tags": "🌿 Native, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Lilac (Syringa spp.)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "3 to 7",
+    "Bloom Time": "Mid Spring",
+    "Tags": "🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Magnolia (Magnolia spp.)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "5 to 9",
+    "Bloom Time": "Mid Spring",
+    "Tags": "🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Mock Orange (Philadelphus spp.)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "4 to 8",
+    "Bloom Time": "Late Spring",
+    "Tags": "🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Mountain Laurel (Kalmia latifolia)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "4 to 9",
+    "Bloom Time": "Late Spring",
+    "Tags": "🌿 Native, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Ninebark (Physocarpus opulifolius)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "2 to 7",
+    "Bloom Time": "Late Spring",
+    "Tags": "🌿 Native, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Pear, Common Fruiting (Pyrus communis)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "Late winter to early spring",
+    "USDA Zones": "4 to 8",
+    "Bloom Time": "Early spring",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Pear, Asian Fruiting (Pyrus pyrifolia)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "Late winter to early spring",
+    "USDA Zones": "5 to 9",
+    "Bloom Time": "Early spring",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Plum, Common Fruiting (Prunus domestica)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "Late winter to early spring",
+    "USDA Zones": "4 to 9",
+    "Bloom Time": "Early to mid spring",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Plum, Native (P. americana)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "Late winter to early spring",
+    "USDA Zones": "3 to 8",
+    "Bloom Time": "Early to mid spring",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Quince (Chaenomeles spp.)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "5 to 9",
+    "Bloom Time": "Early Spring",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Red Maple (Acer rubrum)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "Late winter to early spring",
+    "USDA Zones": "3 to 9",
+    "Bloom Time": "Early Spring",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Redbud (Cercis spp.)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "4 to 9",
+    "Bloom Time": "Early Spring",
+    "Tags": "🌿 Native, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Rhododendron (Rhododendron spp.)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "4 to 8",
+    "Bloom Time": "Spring",
+    "Tags": "🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Roses, Hybrid Tea (Rosas cvs.)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "4 to 9",
+    "Bloom Time": "Late winter to early spring",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Roses, Modern Shrub (Repeat bloomers)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "4 to 9",
+    "Bloom Time": "Spring to Fall",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Roses, Old-Fashioned Shrub (Once Bloomers)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "4 to 9",
+    "Bloom Time": "Late spring or early summer",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Roses, Modern Climbing (Repeat bloomers)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "4 to 9",
+    "Bloom Time": "Late spring to Fall",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Roses, Old-Fashioned Climbing (Once bloomers)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "4 to 9",
+    "Bloom Time": "Spring or early summer",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Rose of Sharon (Hibiscus syriacus)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "5 to 9",
+    "Bloom Time": "Summer–Fall",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Serviceberry, Shadblow (Amelanchier spp.)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "4 to 9",
+    "Bloom Time": "Early Spring",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental",
+    "Notes": "exception to the usual rule of \"prune after flowering\" for old-wood bloomers, likely due to Serviceberry’s early bloom time (often March or April) a"
+  },
+  {
+    "Plant Name": "Shrubby Cinquefoil (Potentilla fruticosa)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "2 to 7",
+    "Bloom Time": "Late spring to summer",
+    "Tags": "🌿 Native, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Smoketree (Cotinus coggygria)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "5 to 8",
+    "Bloom Time": "Late Spring to Summer",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Spirea (S. thunbergii, S. × vanhouttei, S. prunifolia)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "4 to 9",
+    "Bloom Time": "Spring",
+    "Tags": "🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Spirea, Japanese (S. japonica, S. × bumalda)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter to early spring",
+    "USDA Zones": "4 to 9",
+    "Bloom Time": "Early to mid-summer",
+    "Tags": "🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Spirea, Meadowsweet (S. alba)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "3 to 8",
+    "Bloom Time": "Mid to late summer",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Sumac (Rhus typhina)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter to early spring",
+    "USDA Zones": "3 to 8",
+    "Bloom Time": "Late spring to early summer",
+    "Tags": "🌿 Native, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Summersweet (Clethra alnifolia)",
+    "Pruning Wood Type": "New Wood",
+    "Pruning Timing": "Late winter–early spring",
+    "USDA Zones": "3 to 9",
+    "Bloom Time": "Mid–Late Summer",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Sweetspire, Virginia (Itea virginica)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "5 to 9",
+    "Bloom Time": "Late spring to early summer",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Sweetshrub (Calycanthus floridus)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "4 to 9",
+    "Bloom Time": "Late spring to early summer",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Viburnum, Arrowood (e.g., V. dentatum)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "3 to 9",
+    "Bloom Time": "Spring",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Viburnum, Asian varieties (e.g., V. carlesii, V. plicatum)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "4 to 8",
+    "Bloom Time": "Spring",
+    "Tags": "🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Weigela, Asian varieties (W. florida)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "4 to 8",
+    "Bloom Time": "Late spring to early summer",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Wisteria, American (W. frutescens)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "4 to 9",
+    "Bloom Time": "Late spring to early summer",
+    "Tags": "🐝 Pollinator, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Wisteria, Asian (W. sinensis, W. floribunda)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "3 to 9",
+    "Bloom Time": "Late spring to early summer",
+    "Tags": "🌿 Native, 🌸 Ornamental"
+  },
+  {
+    "Plant Name": "Witch Hazel (Hamamelis virginiana)",
+    "Pruning Wood Type": "Old Wood",
+    "Pruning Timing": "After flowering ends",
+    "USDA Zones": "3 to 8",
+    "Bloom Time": "Fall to winter",
+    "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
+  }
+];
 
         document.getElementById('plantSelect').addEventListener('change', function() {
-            const plant = this.value;
-            const resultsDiv = document.getElementById('result');
-            
-            if (plant && plantData[plant]) {
-                const plantInfo = plantData[plant];
-                
-                // Display plant name with italic botanical name
-                const displayName = plant.replace(/\(([^)]+)\)/, '<span class="botanical-name">($1)</span>');
-                document.getElementById("plantName").innerHTML = displayName;
-                
-                document.getElementById("pruningCategory").textContent = plantInfo.pruningCategory;
-                document.getElementById("pruningTiming").textContent = plantInfo.pruningTiming;
-                document.getElementById("zoneRange").textContent = plantInfo.zoneRange;
-                document.getElementById("bloomSeason").textContent = plantInfo.bloomSeason;
-                
-                // Display special features
-                const featuresContainer = document.getElementById("specialFeatures");
-                featuresContainer.innerHTML = "";
-                const features = plantInfo.specialFeatures.split(", ");
-                features.forEach(feature => {
-                    const span = document.createElement("span");
-                    span.className = "tag";
-                    span.textContent = feature;
-                    featuresContainer.appendChild(span);
-                });
-                
-                // Display growing guide link
-                const guideLinkContainer = document.getElementById("growingGuideLink");
-                guideLinkContainer.innerHTML = "";
-                if (plantInfo.guideLink) {
-                    const link = document.createElement("a");
-                    link.href = plantInfo.guideLink;
-                    link.className = "growing-guide-link";
-                    link.textContent = "More Growing Tips";
-                    link.target = "_blank";
-                    guideLinkContainer.appendChild(link);
-                }
-                
-                resultsDiv.classList.add('active');
-            } else {
-                resultsDiv.classList.remove('active');
-            }
-        });
+    const selectedPlantName = this.value;
+    const resultsDiv = document.getElementById('result');
+    
+    // Find the plant object in the array that matches the selected name.
+    const plantInfo = plantData.find(plant => plant['Plant Name'] === selectedPlantName);
+
+    if (plantInfo) {
+        // Correct property access using the exact keys from your data
+        document.getElementById("plantName").textContent = plantInfo['Plant Name'];
+        document.getElementById("pruningCategory").textContent = plantInfo['Pruning Wood Type'];
+        document.getElementById("pruningTiming").textContent = plantInfo['Pruning Timing'];
+        document.getElementById("zoneRange").textContent = plantInfo['USDA Zones'];
+        document.getElementById("bloomSeason").textContent = plantInfo['Bloom Time'];
+
+        const tagsContainer = document.getElementById("tags");
+        tagsContainer.innerHTML = "";
+        
+        // Check if tags exist before splitting them
+        if (plantInfo.Tags) {
+            const tags = plantInfo.Tags.split(", ");
+            tags.forEach(tag => {
+                const span = document.createElement("span");
+                span.className = "tag";
+                span.textContent = tag;
+                tagsContainer.appendChild(span);
+            });
+        }
+        
+        resultsDiv.classList.add('active');
+    } else {
+        // If no plant is selected or found, hide the results div
+        resultsDiv.classList.remove('active');
+    }
+});
     </script>
 </body>
 </html>
