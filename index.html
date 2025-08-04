@@ -113,6 +113,13 @@
           font-weight: normal;
           font-size: 22px;
         }
+        #pruning-app h3 a {
+          color: inherit;
+          text-decoration: none;
+        }
+        #pruning-app h3 a:hover {
+          text-decoration: underline;
+        }
         #pruning-app .grow-guide-link {
           margin-top: 20px;
           padding: 10px;
@@ -262,7 +269,7 @@
                         <div class="info-value" id="tags"></div>
                     </div>
                     <div class="grow-guide-link">
-                        <p>For more detailed growing information, visit our <a href="https://www.almanac.com/gardening/growing-guides#Shrubs%20and%20Bushes " target="_blank">Shrubs and Bushes Growing Guides</a> or <a href=" https://www.almanac.com/gardening/growing-guides#Trees" target="_blank">Trees Growing Guides</a>.</p>
+                        <p>For more detailed growing information, visit our <a href="https://www.almanac.com/gardening/growing-guides#Shrubs%20and%20Bushes" target="_blank">Shrubs and Bushes Growing Guides</a> or <a href="https://www.almanac.com/gardening/growing-guides#Trees" target="_blank">Trees Growing Guides</a>.</p>
                     </div>
                     <div class="note">
                         Note: Always use clean, sharp pruning tools and make cuts at a 45-degree angle just above a bud.
@@ -821,47 +828,132 @@
   }
 ];
 
+        // Mapping of plant names to their URL fragments
+        const plantUrlMap = {
+            "Abelia (A. x grandiflora)": "abelia",
+            "Azalea, Non-native/Hybrid (Rhododendron spp.)": "azalea",
+            "Azalea, Native (Rhododendron spp.)": "azalea",
+            "Beautyberry, Asian (Callicarpa spp.)": "beautyberry",
+            "Beautyberry, American (Callicarpa americana)": "american-beautyberry",
+            "Beautybush (Kolkwitzia amabilis)": "beautybush",
+            "Butterfly Bush (Buddleia davidii)": "butterfly-bush",
+            "Sweetshrub (Calycanthus spp.)": "sweetshrub",
+            "Camellia (C. japonica)": "camellia",
+            "Camellia (C. sasanqua)": "camellia",
+            "Cherry, Black (Prunus serotina)": "black-cherry",
+            "Cherry, Cornelian (Cornus mas)": "cornelian-cherry",
+            "Cherry, Native (Prunus virginiana, etc.)": "wild-cherry",
+            "Cherry (Prunus)": "cherry",
+            "Climbing Hydrangea (H. anomala petiolaris)": "climbing-hydrangea",
+            "Crabapple (Malus spp.)": "crabapple",
+            "Crepe Myrtle (Lagerstromia spp.)": "crepe-myrtle",
+            "Deutzia (Deutzia spp.)": "deutzia",
+            "Dogwood, Kousa (Cornus florida spp.)": "kousa-dogwood",
+            "Flowering Dogwood (Cornus florida)": "flowering-dogwood",
+            "Dogwood, Red-Twigged (Cornus sericea spp.)": "red-twig-dogwood",
+            "Elderberry (Sambucus canadensis)": "elderberry",
+            "Forsythia (Forsythia spp.)": "forsythia",
+            "Fothergilla (Fothergilla spp.)": "fothergilla",
+            "Hawthorn, Native (Crataegus spp.)": "hawthorn",
+            "Honeysuckle, Native (Lonicera sempervirens)": "native-honeysuckle",
+            "Hydrangea, Bigleaf (H. macrophylla)": "bigleaf-hydrangea",
+            "Hydrangea 'Endless Summer' (H. macrophylla)": "endless-summer-hydrangea",
+            "Climbing Hydrangea (H. anomala ssp. Petiolaris)": "climbing-hydrangea",
+            "Mountain Hydrangea (H. serrata)": "mountain-hydrangea",
+            "Hydrangea, Oakleaf (H. quercifolia)": "oakleaf-hydrangea",
+            "Hydrangea, Panicle aka Peegee (H. paniculata)": "panicle-hydrangea",
+            "Hydrangea, Smooth (H. arborescens)": "smooth-hydrangea",
+            "Lilac (Syringa spp.)": "lilac",
+            "Magnolia (Magnolia spp.)": "magnolia",
+            "Mock Orange (Philadelphus spp.)": "mock-orange",
+            "Mountain Laurel (Kalmia latifolia)": "mountain-laurel",
+            "Ninebark (Physocarpus opulifolius)": "ninebark",
+            "Pear, Common Fruiting (Pyrus communis)": "pear",
+            "Pear, Asian Fruiting (Pyrus pyrifolia)": "asian-pear",
+            "Plum, Common Fruiting (Prunus domestica)": "plum",
+            "Plum, Native (P. americana)": "american-plum",
+            "Quince (Chaenomeles spp.)": "flowering-quince",
+            "Red Maple (Acer rubrum)": "red-maple",
+            "Redbud (Cercis spp.)": "redbud",
+            "Rhododendron (Rhododendron spp.)": "rhododendron",
+            "Roses, Hybrid Tea (Rosas cvs.)": "hybrid-tea-rose",
+            "Roses, Modern Shrub (Repeat bloomers)": "shrub-rose",
+            "Roses, Old-Fashioned Shrub (Once Bloomers)": "old-garden-rose",
+            "Roses, Modern Climbing (Repeat bloomers)": "climbing-rose",
+            "Roses, Old-Fashioned Climbing (Once bloomers)": "old-climbing-rose",
+            "Rose of Sharon (Hibiscus syriacus)": "rose-of-sharon",
+            "Serviceberry, Shadblow (Amelanchier spp.)": "serviceberry",
+            "Shrubby Cinquefoil (Potentilla fruticosa)": "shrubby-cinquefoil",
+            "Smoketree (Cotinus coggygria)": "smoketree",
+            "Spirea (S. thunbergii, S. × vanhouttei, S. prunifolia)": "spirea",
+            "Spirea, Japanese (S. japonica, S. × bumalda)": "japanese-spirea",
+            "Spirea, Meadowsweet (S. alba)": "meadowsweet",
+            "Sumac (Rhus typhina)": "staghorn-sumac",
+            "Summersweet (Clethra alnifolia)": "summersweet",
+            "Sweetspire, Virginia (Itea virginica)": "virginia-sweetspire",
+            "Sweetshrub (Calycanthus floridus)": "sweetshrub",
+            "Viburnum, Arrowood (e.g., V. dentatum)": "arrowwood-viburnum",
+            "Viburnum, Asian varieties (e.g., V. carlesii, V. plicatum)": "asian-viburnum",
+            "Weigela, Asian varieties (W. florida)": "weigela",
+            "Wisteria, American (W. frutescens)": "american-wisteria",
+            "Wisteria, Asian (W. sinensis, W. floribunda)": "asian-wisteria",
+            "Witch Hazel (Hamamelis virginiana)": "witch-hazel"
+        };
+
         document.getElementById('plantSelect').addEventListener('change', function() {
-    const selectedPlantName = this.value;
-    const resultsDiv = document.getElementById('result');
-    
-    // Find the plant object in the array that matches the selected name.
-    const plantInfo = plantData.find(plant => plant['Plant Name'] === selectedPlantName);
+            const selectedPlantName = this.value;
+            const resultsDiv = document.getElementById('result');
+            
+            // Find the plant object in the array that matches the selected name.
+            const plantInfo = plantData.find(plant => plant['Plant Name'] === selectedPlantName);
 
-    if (plantInfo) {
-        // Format the plant name to italicize the botanical part
-        const plantNameParts = plantInfo['Plant Name'].split(' (');
-        let formattedPlantName = plantNameParts[0];
-        if (plantNameParts.length > 1) {
-            formattedPlantName += ' <span class="botanical-name">(' + plantNameParts[1];
-        }
-        
-        document.getElementById("plantName").innerHTML = formattedPlantName;
-        document.getElementById("pruningCategory").textContent = plantInfo['Pruning Wood Type'];
-        document.getElementById("pruningTiming").textContent = plantInfo['Pruning Timing'];
-        document.getElementById("zoneRange").textContent = plantInfo['USDA Zones'];
-        document.getElementById("bloomSeason").textContent = plantInfo['Bloom Time'];
+            if (plantInfo) {
+                // Format the plant name to italicize the botanical part and make it a link
+                const plantNameParts = plantInfo['Plant Name'].split(' (');
+                let formattedPlantName = plantNameParts[0];
+                let botanicalPart = '';
+                
+                if (plantNameParts.length > 1) {
+                    botanicalPart = ' (' + plantNameParts[1];
+                }
+                
+                // Get the URL fragment for this plant
+                const urlFragment = plantUrlMap[plantInfo['Plant Name']] || '';
+                const plantUrl = urlFragment ? 
+                    `https://www.almanac.com/plant/${urlFragment}` : 
+                    (plantInfo['Plant Name'].includes('Tree') || plantInfo['Plant Name'].includes('Maple') || 
+                     plantInfo['Plant Name'].includes('Cherry') || plantInfo['Plant Name'].includes('Dogwood')) ?
+                    'https://www.almanac.com/gardening/growing-guides#Trees' :
+                    'https://www.almanac.com/gardening/growing-guides#Shrubs%20and%20Bushes';
+                
+                const plantNameElement = document.getElementById("plantName");
+                plantNameElement.innerHTML = `<a href="${plantUrl}" target="_blank">${formattedPlantName}<span class="botanical-name">${botanicalPart}</span></a>`;
+                
+                document.getElementById("pruningCategory").textContent = plantInfo['Pruning Wood Type'];
+                document.getElementById("pruningTiming").textContent = plantInfo['Pruning Timing'];
+                document.getElementById("zoneRange").textContent = plantInfo['USDA Zones'];
+                document.getElementById("bloomSeason").textContent = plantInfo['Bloom Time'];
 
-        const tagsContainer = document.getElementById("tags");
-        tagsContainer.innerHTML = "";
-        
-        // Check if tags exist before splitting them
-        if (plantInfo.Tags) {
-            const tags = plantInfo.Tags.split(", ");
-            tags.forEach(tag => {
-                const span = document.createElement("span");
-                span.className = "tag";
-                span.textContent = tag;
-                tagsContainer.appendChild(span);
-            });
-        }
-        
-        resultsDiv.classList.add('active');
-    } else {
-        // If no plant is selected or found, hide the results div
-        resultsDiv.classList.remove('active');
-    }
-});
+                const tagsContainer = document.getElementById("tags");
+                tagsContainer.innerHTML = "";
+                
+                // Check if tags exist before splitting them
+                if (plantInfo.Tags) {
+                    const tags = plantInfo.Tags.split(", ");
+                    tags.forEach(tag => {
+                        const span = document.createElement("span");
+                        span.className = "tag";
+                        span.textContent = tag;
+                        tagsContainer.appendChild(span);
+                    });
+                }
+                
+                resultsDiv.classList.add('active');
+            } else {
+                // If no plant is selected or found, hide the results div
+                resultsDiv.classList.remove('active');
+            }
+        });
     </script>
 </body>
 </html>
