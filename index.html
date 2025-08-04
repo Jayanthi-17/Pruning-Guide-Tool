@@ -269,7 +269,7 @@
                         <div class="info-value" id="tags"></div>
                     </div>
                     <div class="grow-guide-link">
-                        <p>For more detailed growing information, visit our <a href="https://www.almanac.com/gardening/growing-guides#Shrubs%20and%20Bushes" target="_blank">Shrubs and Bushes Growing Guides</a> or <a href="https://www.almanac.com/gardening/growing-guides#Trees" target="_blank">Trees Growing Guides</a>.</p>
+                        <p>For more detailed growing information, visit our <a href=" https://www.almanac.com/gardening/growing-guides#Shrubs%20and%20Bushes" target="_blank">Shrubs and Bushes Growing Guides</a> or <a href="https://www.almanac.com/gardening/growing-guides#Trees" target="_blank">Trees Growing Guides</a>.</p>
                     </div>
                     <div class="note">
                         Note: Always use clean, sharp pruning tools and make cuts at a 45-degree angle just above a bud.
@@ -830,74 +830,34 @@
 
         // Mapping of plant names to their URL fragments
         const plantUrlMap = {
-            "Abelia (A. x grandiflora)": "abelia",
-            "Azalea, Non-native/Hybrid (Rhododendron spp.)": "azalea",
-            "Azalea, Native (Rhododendron spp.)": "azalea",
-            "Beautyberry, Asian (Callicarpa spp.)": "beautyberry",
-            "Beautyberry, American (Callicarpa americana)": "american-beautyberry",
-            "Beautybush (Kolkwitzia amabilis)": "beautybush",
-            "Butterfly Bush (Buddleia davidii)": "butterfly-bush",
-            "Sweetshrub (Calycanthus spp.)": "sweetshrub",
-            "Camellia (C. japonica)": "camellia",
-            "Camellia (C. sasanqua)": "camellia",
-            "Cherry, Black (Prunus serotina)": "black-cherry",
-            "Cherry, Cornelian (Cornus mas)": "cornelian-cherry",
-            "Cherry, Native (Prunus virginiana, etc.)": "wild-cherry",
-            "Cherry (Prunus)": "cherry",
-            "Climbing Hydrangea (H. anomala petiolaris)": "climbing-hydrangea",
-            "Crabapple (Malus spp.)": "crabapple",
-            "Crepe Myrtle (Lagerstromia spp.)": "crepe-myrtle",
-            "Deutzia (Deutzia spp.)": "deutzia",
-            "Dogwood, Kousa (Cornus florida spp.)": "kousa-dogwood",
-            "Flowering Dogwood (Cornus florida)": "flowering-dogwood",
-            "Dogwood, Red-Twigged (Cornus sericea spp.)": "red-twig-dogwood",
-            "Elderberry (Sambucus canadensis)": "elderberry",
-            "Forsythia (Forsythia spp.)": "forsythia",
-            "Fothergilla (Fothergilla spp.)": "fothergilla",
-            "Hawthorn, Native (Crataegus spp.)": "hawthorn",
-            "Honeysuckle, Native (Lonicera sempervirens)": "native-honeysuckle",
-            "Hydrangea, Bigleaf (H. macrophylla)": "bigleaf-hydrangea",
-            "Hydrangea 'Endless Summer' (H. macrophylla)": "endless-summer-hydrangea",
-            "Climbing Hydrangea (H. anomala ssp. Petiolaris)": "climbing-hydrangea",
-            "Mountain Hydrangea (H. serrata)": "mountain-hydrangea",
-            "Hydrangea, Oakleaf (H. quercifolia)": "oakleaf-hydrangea",
-            "Hydrangea, Panicle aka Peegee (H. paniculata)": "panicle-hydrangea",
-            "Hydrangea, Smooth (H. arborescens)": "smooth-hydrangea",
-            "Lilac (Syringa spp.)": "lilac",
-            "Magnolia (Magnolia spp.)": "magnolia",
-            "Mock Orange (Philadelphus spp.)": "mock-orange",
-            "Mountain Laurel (Kalmia latifolia)": "mountain-laurel",
-            "Ninebark (Physocarpus opulifolius)": "ninebark",
-            "Pear, Common Fruiting (Pyrus communis)": "pear",
-            "Pear, Asian Fruiting (Pyrus pyrifolia)": "asian-pear",
-            "Plum, Common Fruiting (Prunus domestica)": "plum",
-            "Plum, Native (P. americana)": "american-plum",
-            "Quince (Chaenomeles spp.)": "flowering-quince",
-            "Red Maple (Acer rubrum)": "red-maple",
-            "Redbud (Cercis spp.)": "redbud",
-            "Rhododendron (Rhododendron spp.)": "rhododendron",
-            "Roses, Hybrid Tea (Rosas cvs.)": "hybrid-tea-rose",
-            "Roses, Modern Shrub (Repeat bloomers)": "shrub-rose",
-            "Roses, Old-Fashioned Shrub (Once Bloomers)": "old-garden-rose",
-            "Roses, Modern Climbing (Repeat bloomers)": "climbing-rose",
-            "Roses, Old-Fashioned Climbing (Once bloomers)": "old-climbing-rose",
-            "Rose of Sharon (Hibiscus syriacus)": "rose-of-sharon",
-            "Serviceberry, Shadblow (Amelanchier spp.)": "serviceberry",
-            "Shrubby Cinquefoil (Potentilla fruticosa)": "shrubby-cinquefoil",
-            "Smoketree (Cotinus coggygria)": "smoketree",
-            "Spirea (S. thunbergii, S. × vanhouttei, S. prunifolia)": "spirea",
-            "Spirea, Japanese (S. japonica, S. × bumalda)": "japanese-spirea",
-            "Spirea, Meadowsweet (S. alba)": "meadowsweet",
-            "Sumac (Rhus typhina)": "staghorn-sumac",
-            "Summersweet (Clethra alnifolia)": "summersweet",
-            "Sweetspire, Virginia (Itea virginica)": "virginia-sweetspire",
-            "Sweetshrub (Calycanthus floridus)": "sweetshrub",
-            "Viburnum, Arrowood (e.g., V. dentatum)": "arrowwood-viburnum",
-            "Viburnum, Asian varieties (e.g., V. carlesii, V. plicatum)": "asian-viburnum",
-            "Weigela, Asian varieties (W. florida)": "weigela",
-            "Wisteria, American (W. frutescens)": "american-wisteria",
-            "Wisteria, Asian (W. sinensis, W. floribunda)": "asian-wisteria",
-            "Witch Hazel (Hamamelis virginiana)": "witch-hazel"
+            "Beautyberry, American (Callicarpa americana)": "https://www.almanac.com/plant/beautyberry",
+            "Butterfly Bush (Buddleia davidii)": "https://www.almanac.com/plant/butterfly-bush",
+            "Cherry, Black (Prunus serotina)": "https://www.almanac.com/plant/cherries",
+            "Crepe Myrtle (Lagerstromia spp.)": "https://www.almanac.com/plant/crepe-myrtles",
+            "Flowering Dogwood (Cornus florida)": "https://www.almanac.com/plant/dogwoods",
+            "Elderberry (Sambucus canadensis)": "https://www.almanac.com/plant/elderberries",
+            "Forsythia (Forsythia spp.)": "https://www.almanac.com/plant/forsythia",
+            "Hydrangea, Bigleaf (H. macrophylla)": "https://www.almanac.com/plant/hydrangeas",
+            "Hydrangea 'Endless Summer' (H. macrophylla)": "https://www.almanac.com/plant/hydrangeas",
+            "Hydrangea, Oakleaf (H. quercifolia)": "https://www.almanac.com/plant/hydrangeas",
+            "Hydrangea, Panicle aka Peegee (H. paniculata)": "https://www.almanac.com/plant/hydrangeas",
+            "Hydrangea, Smooth (H. arborescens)": "https://www.almanac.com/plant/hydrangeas",
+            "Lilac (Syringa spp.)": "https://www.almanac.com/plant/lilacs",
+            "Magnolia (Magnolia spp.)": "https://www.almanac.com/plant/magnolias",
+            "Mountain Laurel (Kalmia latifolia)": "https://www.almanac.com/plant/mountain-laurel",
+            "Pear, Common Fruiting (Pyrus communis)": "https://www.almanac.com/plant/pears",
+            "Plum, Common Fruiting (Prunus domestica)": "https://www.almanac.com/plant/plums",
+            "Red Maple (Acer rubrum)": "https://www.almanac.com/plant/maples",
+            "Redbud (Cercis spp.)": "https://www.almanac.com/plant/redbud",
+            "Rhododendron (Rhododendron spp.)": "https://www.almanac.com/plant/rhododendrons",
+            "Roses, Hybrid Tea (Rosas cvs.)": "https://www.almanac.com/plant/roses",
+            "Rose of Sharon (Hibiscus syriacus)": "https://www.almanac.com/plant/rose-of-sharon",
+            "Serviceberry, Shadblow (Amelanchier spp.)": "https://www.almanac.com/plant/serviceberries",
+            "Smoketree (Cotinus coggygria)": "https://www.almanac.com/plant/smokebush",
+            "Sumac (Rhus typhina)": "https://www.almanac.com/plant/sumac",
+            "Wisteria, American (W. frutescens)": "https://www.almanac.com/plant/wisteria",
+            "Wisteria, Asian (W. sinensis, W. floribunda)": "https://www.almanac.com/plant/wisteria",
+            "Witch Hazel (Hamamelis virginiana)": "https://www.almanac.com/plant/witch-hazel"
         };
 
         document.getElementById('plantSelect').addEventListener('change', function() {
@@ -908,7 +868,7 @@
             const plantInfo = plantData.find(plant => plant['Plant Name'] === selectedPlantName);
 
             if (plantInfo) {
-                // Format the plant name to italicize the botanical part and make it a link
+                // Format the plant name
                 const plantNameParts = plantInfo['Plant Name'].split(' (');
                 let formattedPlantName = plantNameParts[0];
                 let botanicalPart = '';
@@ -917,17 +877,17 @@
                     botanicalPart = ' (' + plantNameParts[1];
                 }
                 
-                // Get the URL fragment for this plant
-                const urlFragment = plantUrlMap[plantInfo['Plant Name']] || '';
-                const plantUrl = urlFragment ? 
-                    `https://www.almanac.com/plant/${urlFragment}` : 
-                    (plantInfo['Plant Name'].includes('Tree') || plantInfo['Plant Name'].includes('Maple') || 
-                     plantInfo['Plant Name'].includes('Cherry') || plantInfo['Plant Name'].includes('Dogwood')) ?
-                    'https://www.almanac.com/gardening/growing-guides#Trees' :
-                    'https://www.almanac.com/gardening/growing-guides#Shrubs%20and%20Bushes';
-                
+                // Get the URL for this plant if it exists
+                const plantUrl = plantUrlMap[plantInfo['Plant Name']];
                 const plantNameElement = document.getElementById("plantName");
-                plantNameElement.innerHTML = `<a href="${plantUrl}" target="_blank">${formattedPlantName}<span class="botanical-name">${botanicalPart}</span></a>`;
+                
+                if (plantUrl) {
+                    // If we have a specific growing guide, make the name a link
+                    plantNameElement.innerHTML = `<a href="${plantUrl}" target="_blank">${formattedPlantName}<span class="botanical-name">${botanicalPart}</span></a>`;
+                } else {
+                    // If no specific guide, just show the name without link
+                    plantNameElement.innerHTML = `${formattedPlantName}<span class="botanical-name">${botanicalPart}</span>`;
+                }
                 
                 document.getElementById("pruningCategory").textContent = plantInfo['Pruning Wood Type'];
                 document.getElementById("pruningTiming").textContent = plantInfo['Pruning Timing'];
@@ -937,7 +897,6 @@
                 const tagsContainer = document.getElementById("tags");
                 tagsContainer.innerHTML = "";
                 
-                // Check if tags exist before splitting them
                 if (plantInfo.Tags) {
                     const tags = plantInfo.Tags.split(", ");
                     tags.forEach(tag => {
@@ -950,7 +909,6 @@
                 
                 resultsDiv.classList.add('active');
             } else {
-                // If no plant is selected or found, hide the results div
                 resultsDiv.classList.remove('active');
             }
         });
