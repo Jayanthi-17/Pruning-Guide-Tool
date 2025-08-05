@@ -2,133 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pruning Guide Tool</title>
-</head>
-<body>
-    <div id="pruningGuideContainer"></div>
-
-    <script>
-        document.getElementById('pruningGuideContainer').innerHTML = `
-        <div id="pruning-app">
-            <div class="pruning-tool">
-                <div class="tool-header">
-                    <h1>Pruning Guide for Flowering Shrubs & Trees</h1>
-                </div>
-                <div class="tool-body">
-                    <div class="select-container">
-                        <label for="plantSelect">Select a Plant:</label>
-                        <select id="plantSelect">
-                        <option value="">-- Choose a plant --</option>
-                        <option value="Abelia (A. x grandiflora)">Abelia <span class="botanical-name">(A. x grandiflora)</span></option>
-                        <option value="Azalea, Non-native/Hybrid (Rhododendron spp.)">Azalea, Non-native/Hybrid <span class="botanical-name">(Rhododendron spp.)</span></option>
-                        <option value="Azalea, Native (Rhododendron spp.)">Azalea, Native <span class="botanical-name">(Rhododendron spp.)</span></option>
-                        <option value="Beautyberry, Asian (Callicarpa spp.)">Beautyberry, Asian <span class="botanical-name">(Callicarpa spp.)</span></option>
-                        <option value="Beautyberry, American (Callicarpa americana)">Beautyberry, American <span class="botanical-name">(Callicarpa americana)</span></option>
-                        <option value="Beautybush (Kolkwitzia amabilis)">Beautybush <span class="botanical-name">(Kolkwitzia amabilis)</span></option>
-                        <option value="Butterfly Bush (Buddleia davidii)">Butterfly Bush <span class="botanical-name">(Buddleia davidii)</span></option>
-                        <option value="Sweetshrub (Calycanthus spp.)">Sweetshrub <span class="botanical-name">(Calycanthus spp.)</span></option>
-                        <option value="Camellia (C. japonica)">Camellia <span class="botanical-name">(C. japonica)</span></option>
-                        <option value="Camellia (C. sasanqua)">Camellia <span class="botanical-name">(C. sasanqua)</span></option>
-                        <option value="Cherry, Black (Prunus serotina)">Cherry, Black <span class="botanical-name">(Prunus serotina)</span></option>
-                        <option value="Cherry, Cornelian (Cornus mas)">Cherry, Cornelian <span class="botanical-name">(Cornus mas)</span></option>
-                        <option value="Cherry, Native (Prunus virginiana, etc.)">Cherry, Native <span class="botanical-name">(Prunus virginiana, etc.)</span></option>
-                        <option value="Cherry (Prunus)">Cherry <span class="botanical-name">(Prunus)</span></option>
-                        <option value="Climbing Hydrangea (H. anomala petiolaris)">Climbing Hydrangea <span class="botanical-name">(H. anomala petiolaris)</span></option>
-                        <option value="Crabapple (Malus spp.)">Crabapple <span class="botanical-name">(Malus spp.)</span></option>
-                        <option value="Crepe Myrtle (Lagerstromia spp.)">Crepe Myrtle <span class="botanical-name">(Lagerstromia spp.)</span></option>
-                        <option value="Deutzia (Deutzia spp.)">Deutzia <span class="botanical-name">(Deutzia spp.)</span></option>
-                        <option value="Dogwood, Kousa (Cornus florida spp.)">Dogwood, Kousa <span class="botanical-name">(Cornus florida spp.)</span></option>
-                        <option value="Flowering Dogwood (Cornus florida)">Flowering Dogwood <span class="botanical-name">(Cornus florida)</span></option>
-                        <option value="Dogwood, Red-Twigged (Cornus sericea spp.)">Dogwood, Red-Twigged <span class="botanical-name">(Cornus sericea spp.)</span></option>
-                        <option value="Elderberry (Sambucus canadensis)">Elderberry <span class="botanical-name">(Sambucus canadensis)</span></option>
-                        <option value="Forsythia (Forsythia spp.)">Forsythia <span class="botanical-name">(Forsythia spp.)</span></option>
-                        <option value="Fothergilla (Fothergilla spp.)">Fothergilla <span class="botanical-name">(Fothergilla spp.)</span></option>
-                        <option value="Hawthorn, Native (Crataegus spp.)">Hawthorn, Native <span class="botanical-name">(Crataegus spp.)</span></option>
-                        <option value="Honeysuckle, Native (Lonicera sempervirens)">Honeysuckle, Native <span class="botanical-name">(Lonicera sempervirens)</span></option>
-                        <option value="Hydrangea, Bigleaf (H. macrophylla)">Hydrangea, Bigleaf <span class="botanical-name">(H. macrophylla)</span></option>
-                        <option value="Hydrangea 'Endless Summer' (H. macrophylla)">Hydrangea 'Endless Summer' <span class="botanical-name">(H. macrophylla)</span></option>
-                        <option value="Climbing Hydrangea (H. anomala ssp. Petiolaris)">Climbing Hydrangea <span class="botanical-name">(H. anomala ssp. Petiolaris)</span></option>
-                        <option value="Mountain Hydrangea (H. serrata)">Mountain Hydrangea <span class="botanical-name">(H. serrata)</span></option>
-                        <option value="Hydrangea, Oakleaf (H. quercifolia)">Hydrangea, Oakleaf <span class="botanical-name">(H. quercifolia)</span></option>
-                        <option value="Hydrangea, Panicle aka Peegee (H. paniculata)">Hydrangea, Panicle aka Peegee <span class="botanical-name">(H. paniculata)</span></option>
-                        <option value="Hydrangea, Smooth (H. arborescens)">Hydrangea, Smooth <span class="botanical-name">(H. arborescens)</span></option>
-                        <option value="Lilac (Syringa spp.)">Lilac <span class="botanical-name">(Syringa spp.)</span></option>
-                        <option value="Magnolia (Magnolia spp.)">Magnolia <span class="botanical-name">(Magnolia spp.)</span></option>
-                        <option value="Mock Orange (Philadelphus spp.)">Mock Orange <span class="botanical-name">(Philadelphus spp.)</span></option>
-                        <option value="Mountain Laurel (Kalmia latifolia)">Mountain Laurel <span class="botanical-name">(Kalmia latifolia)</span></option>
-                        <option value="Ninebark (Physocarpus opulifolius)">Ninebark <span class="botanical-name">(Physocarpus opulifolius)</span></option>
-                        <option value="Pear, Common Fruiting (Pyrus communis)">Pear, Common Fruiting <span class="botanical-name">(Pyrus communis)</span></option>
-                        <option value="Pear, Asian Fruiting (Pyrus pyrifolia)">Pear, Asian Fruiting <span class="botanical-name">(Pyrus pyrifolia)</span></option>
-                        <option value="Plum, Common Fruiting (Prunus domestica)">Plum, Common Fruiting <span class="botanical-name">(Prunus domestica)</span></option>
-                        <option value="Plum, Native (P. americana)">Plum, Native <span class="botanical-name">(P. americana)</span></option>
-                        <option value="Quince (Chaenomeles spp.)">Quince <span class="botanical-name">(Chaenomeles spp.)</span></option>
-                        <option value="Red Maple (Acer rubrum)">Red Maple <span class="botanical-name">(Acer rubrum)</span></option>
-                        <option value="Redbud (Cercis spp.)">Redbud <span class="botanical-name">(Cercis spp.)</span></option>
-                        <option value="Rhododendron (Rhododendron spp.)">Rhododendron <span class="botanical-name">(Rhododendron spp.)</span></option>
-                        <option value="Roses, Hybrid Tea (Rosas cvs.)">Roses, Hybrid Tea <span class="botanical-name">(Rosas cvs.)</span></option>
-                        <option value="Roses, Modern Shrub (Repeat bloomers)">Roses, Modern Shrub <span class="botanical-name">(Repeat bloomers)</span></option>
-                        <option value="Roses, Old-Fashioned Shrub (Once Bloomers)">Roses, Old-Fashioned Shrub <span class="botanical-name">(Once Bloomers)</span></option>
-                        <option value="Roses, Modern Climbing (Repeat bloomers)">Roses, Modern Climbing <span class="botanical-name">(Repeat bloomers)</span></option>
-                        <option value="Roses, Old-Fashioned Climbing (Once bloomers)">Roses, Old-Fashioned Climbing <span class="botanical-name">(Once bloomers)</span></option>
-                        <option value="Rose of Sharon (Hibiscus syriacus)">Rose of Sharon <span class="botanical-name">(Hibiscus syriacus)</span></option>
-                        <option value="Serviceberry, Shadblow (Amelanchier spp.)">Serviceberry, Shadblow <span class="botanical-name">(Amelanchier spp.)</span></option>
-                        <option value="Shrubby Cinquefoil (Potentilla fruticosa)">Shrubby Cinquefoil <span class="botanical-name">(Potentilla fruticosa)</span></option>
-                        <option value="Smoketree (Cotinus coggygria)">Smoketree <span class="botanical-name">(Cotinus coggygria)</span></option>
-                        <option value="Spirea (S. thunbergii, S. × vanhouttei, S. prunifolia)">Spirea <span class="botanical-name">(S. thunbergii, S. × vanhouttei, S. prunifolia)</span></option>
-                        <option value="Spirea, Japanese (S. japonica, S. × bumalda)">Spirea, Japanese <span class="botanical-name">(S. japonica, S. × bumalda)</span></option>
-                        <option value="Spirea, Meadowsweet (S. alba)">Spirea, Meadowsweet <span class="botanical-name">(S. alba)</span></option>
-                        <option value="Sumac (Rhus typhina)">Sumac <span class="botanical-name">(Rhus typhina)</span></option>
-                        <option value="Summersweet (Clethra alnifolia)">Summersweet <span class="botanical-name">(Clethra alnifolia)</span></option>
-                        <option value="Sweetspire, Virginia (Itea virginica)">Sweetspire, Virginia <span class="botanical-name">(Itea virginica)</span></option>
-                        <option value="Sweetshrub (Calycanthus floridus)">Sweetshrub <span class="botanical-name">(Calycanthus floridus)</span></option>
-                        <option value="Viburnum, Arrowood (e.g., V. dentatum)">Viburnum, Arrowood <span class="botanical-name">(e.g., V. dentatum)</span></option>
-                        <option value="Viburnum, Asian varieties (e.g., V. carlesii, V. plicatum)">Viburnum, Asian varieties <span class="botanical-name">(e.g., V. carlesii, V. plicatum)</span></option>
-                        <option value="Weigela, Asian varieties (W. florida)">Weigela, Asian varieties <span class="botanical-name">(W. florida)</span></option>
-                        <option value="Wisteria, American (W. frutescens)">Wisteria, American <span class="botanical-name">(W. frutescens)</span></option>
-                        <option value="Wisteria, Asian (W. sinensis, W. floribunda)">Wisteria, Asian <span class="botanical-name">(W. sinensis, W. floribunda)</span></option>
-                        <option value="Witch Hazel (Hamamelis virginiana)">Witch Hazel <span class="botanical-name">(Hamamelis virginiana)</span></option>
-                    </select>
-                    </div>
-                    
-                    <div id="result" class="results">
-                        <h3 id="plantName"></h3>
-                        <div class="info-row">
-                            <div class="info-label">Pruning Category:</div>
-                            <div class="info-value" id="pruningCategory"></div>
-                        </div>
-                        <div class="info-row">
-                            <div class="info-label">Pruning Timing:</div>
-                            <div class="info-value" id="pruningTiming"></div>
-                        </div>
-                        <div class="info-row">
-                            <div class="info-label">Zone Range:</div>
-                            <div class="info-value" id="zoneRange"></div>
-                        </div>
-                        <div class="info-row">
-                            <div class="info-label">Bloom Season:</div>
-                            <div class="info-value" id="bloomSeason"></div>
-                        </div>
-                        <div class="info-row">
-                            <div class="info-label">Special Features:</div>
-                            <div class="info-value" id="tags"></div>
-                        </div>
-                        <div class="grow-guide-link">
-                            <p>For more detailed growing information, visit our <a href="https://www.almanac.com/gardening/growing-guides#Shrubs%20and%20Bushes" target="_blank">Shrubs and Bushes Growing Guides</a> or <a href="https://www.almanac.com/gardening/growing-guides#Trees" target="_blank">Trees Growing Guides</a>.</p>
-                        </div>
-                        <div class="note">
-                            Note: Always use clean, sharp pruning tools and make cuts at a 45-degree angle just above a bud.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>`;
-    </script>
-
-    <script>
-        // CSS Styles - Scoped to #pruning-app 
-        const pruningStyles = document.createElement('style');
-        pruningStyles.textContent = `
+    <style>
         #pruning-app {
           font-family: 'Libre Baskerville', Georgia, serif;
           background-color: #f8f5f0;
@@ -164,13 +40,13 @@
         #pruning-app .select-container {
           margin-bottom: 25px;
         }
-        #pruning-app .select-container label {
+        #pruning-app label {
           display: block;
           margin-bottom: 8px;
           font-size: 18px;
           color: #555;
         }
-        #pruning-app .select-container select {
+        #pruning-app select {
           width: 100%;
           padding: 12px;
           border: 1px solid #d4c9b1;
@@ -183,7 +59,7 @@
           -moz-appearance: none;
           appearance: none;
         }
-        #pruning-app .select-container select:focus {
+        #pruning-app select:focus {
           outline: none;
           border-color: #ad2a24;
         }
@@ -263,7 +139,7 @@
           font-style: italic;
         }
         
-        /* Enhanced Mobile Styles */
+        /* Mobile-specific styles */
         @media (max-width: 600px) {
           #pruning-app {
             padding: 10px;
@@ -272,11 +148,10 @@
             padding: 15px;
           }
           #pruning-app .tool-header h1 {
-            font-size: 22px;
-            padding: 15px 10px;
+            font-size: 24px;
           }
-          #pruning-app .select-container select {
-            padding: 12px 10px;
+          #pruning-app select {
+            padding: 10px;
             font-size: 16px;
           }
           #pruning-app .info-row {
@@ -286,38 +161,127 @@
             margin-bottom: 5px;
             width: 100%;
           }
-          #pruning-app .info-value {
-            min-width: 100%;
-          }
-          #pruning-app .results {
-            padding: 15px;
-            margin-top: 15px;
-          }
-          #pruning-app h3 {
-            font-size: 20px;
-          }
         }
-
-        /* Very small devices (phones, 400px and down) */
-        @media (max-width: 400px) {
-          #pruning-app .tool-header h1 {
-            font-size: 20px;
-          }
-          #pruning-app .select-container label {
-            font-size: 16px;
-          }
-          #pruning-app .select-container select {
-            padding: 10px 8px;
-            font-size: 15px;
-          }
-        }`;
-        document.head.appendChild(pruningStyles);
-    </script>
+    </style>
+</head>
+<body>
+    <div id="pruning-app">
+        <div class="pruning-tool">
+            <div class="tool-header">
+                <h1>Pruning Guide for Flowering Shrubs & Trees</h1>
+            </div>
+            <div class="tool-body">
+                <div class="select-container">
+                    <label for="plantSelect">Select a Plant:</label>
+                    <select id="plantSelect">
+                        <option value="">-- Choose a plant --</option>
+                        <option value="Abelia (A. x grandiflora)">Abelia <span class="botanical-name">(A. x grandiflora)</span></option>
+                        <option value="Azalea, Non-native/Hybrid (Rhododendron spp.)">Azalea, Non-native/Hybrid <span class="botanical-name">(Rhododendron spp.)</span></option>
+                        <option value="Azalea, Native (Rhododendron spp.)">Azalea, Native <span class="botanical-name">(Rhododendron spp.)</span></option>
+                        <option value="Beautyberry, Asian (Callicarpa spp.)">Beautyberry, Asian <span class="botanical-name">(Callicarpa spp.)</span></option>
+                        <option value="Beautyberry, American (Callicarpa americana)">Beautyberry, American <span class="botanical-name">(Callicarpa americana)</span></option>
+                        <option value="Beautybush (Kolkwitzia amabilis)">Beautybush <span class="botanical-name">(Kolkwitzia amabilis)</span></option>
+                        <option value="Butterfly Bush (Buddleia davidii)">Butterfly Bush <span class="botanical-name">(Buddleia davidii)</span></option>
+                        <option value="Sweetshrub (Calycanthus spp.)">Sweetshrub <span class="botanical-name">(Calycanthus spp.)</span></option>
+                        <option value="Camellia (C. japonica)">Camellia <span class="botanical-name">(C. japonica)</span></option>
+                        <option value="Camellia (C. sasanqua)">Camellia <span class="botanical-name">(C. sasanqua)</span></option>
+                        <option value="Cherry, Black (Prunus serotina)">Cherry, Black <span class="botanical-name">(Prunus serotina)</span></option>
+                        <option value="Cherry, Cornelian (Cornus mas)">Cherry, Cornelian <span class="botanical-name">(Cornus mas)</span></option>
+                        <option value="Cherry, Native (Prunus virginiana, etc.)">Cherry, Native <span class="botanical-name">(Prunus virginiana, etc.)</span></option>
+                        <option value="Cherry (Prunus)">Cherry <span class="botanical-name">(Prunus)</span></option>
+                        <option value="Climbing Hydrangea (H. anomala petiolaris)">Climbing Hydrangea <span class="botanical-name">(H. anomala petiolaris)</span></option>
+                        <option value="Crabapple (Malus spp.)">Crabapple <span class="botanical-name">(Malus spp.)</span></option>
+                        <option value="Crepe Myrtle (Lagerstromia spp.)">Crepe Myrtle <span class="botanical-name">(Lagerstromia spp.)</span></option>
+                        <option value="Deutzia (Deutzia spp.)">Deutzia <span class="botanical-name">(Deutzia spp.)</span></option>
+                        <option value="Dogwood, Kousa (Cornus florida spp.)">Dogwood, Kousa <span class="botanical-name">(Cornus florida spp.)</span></option>
+                        <option value="Flowering Dogwood (Cornus florida)">Flowering Dogwood <span class="botanical-name">(Cornus florida)</span></option>
+                        <option value="Dogwood, Red-Twigged (Cornus sericea spp.)">Dogwood, Red-Twigged <span class="botanical-name">(Cornus sericea spp.)</span></option>
+                        <option value="Elderberry (Sambucus canadensis)">Elderberry <span class="botanical-name">(Sambucus canadensis)</span></option>
+                        <option value="Forsythia (Forsythia spp.)">Forsythia <span class="botanical-name">(Forsythia spp.)</span></option>
+                        <option value="Fothergilla (Fothergilla spp.)">Fothergilla <span class="botanical-name">(Fothergilla spp.)</span></option>
+                        <option value="Hawthorn, Native (Crataegus spp.)">Hawthorn, Native <span class="botanical-name">(Crataegus spp.)</span></option>
+                        <option value="Honeysuckle, Native (Lonicera sempervirens)">Honeysuckle, Native <span class="botanical-name">(Lonicera sempervirens)</span></option>
+                        <option value="Hydrangea, Bigleaf (H. macrophylla)">Hydrangea, Bigleaf <span class="botanical-name">(H. macrophylla)</span></option>
+                        <option value="Hydrangea 'Endless Summer' (H. macrophylla)">Hydrangea 'Endless Summer' <span class="botanical-name">(H. macrophylla)</span></option>
+                        <option value="Climbing Hydrangea (H. anomala ssp. Petiolaris)">Climbing Hydrangea <span class="botanical-name">(H. anomala ssp. Petiolaris)</span></option>
+                        <option value="Mountain Hydrangea (H. serrata)">Mountain Hydrangea <span class="botanical-name">(H. serrata)</span></option>
+                        <option value="Hydrangea, Oakleaf (H. quercifolia)">Hydrangea, Oakleaf <span class="botanical-name">(H. quercifolia)</span></option>
+                        <option value="Hydrangea, Panicle aka Peegee (H. paniculata)">Hydrangea, Panicle aka Peegee <span class="botanical-name">(H. paniculata)</span></option>
+                        <option value="Hydrangea, Smooth (H. arborescens)">Hydrangea, Smooth <span class="botanical-name">(H. arborescens)</span></option>
+                        <option value="Lilac (Syringa spp.)">Lilac <span class="botanical-name">(Syringa spp.)</span></option>
+                        <option value="Magnolia (Magnolia spp.)">Magnolia <span class="botanical-name">(Magnolia spp.)</span></option>
+                        <option value="Mock Orange (Philadelphus spp.)">Mock Orange <span class="botanical-name">(Philadelphus spp.)</span></option>
+                        <option value="Mountain Laurel (Kalmia latifolia)">Mountain Laurel <span class="botanical-name">(Kalmia latifolia)</span></option>
+                        <option value="Ninebark (Physocarpus opulifolius)">Ninebark <span class="botanical-name">(Physocarpus opulifolius)</span></option>
+                        <option value="Pear, Common Fruiting (Pyrus communis)">Pear, Common Fruiting <span class="botanical-name">(Pyrus communis)</span></option>
+                        <option value="Pear, Asian Fruiting (Pyrus pyrifolia)">Pear, Asian Fruiting <span class="botanical-name">(Pyrus pyrifolia)</span></option>
+                        <option value="Plum, Common Fruiting (Prunus domestica)">Plum, Common Fruiting <span class="botanical-name">(Prunus domestica)</span></option>
+                        <option value="Plum, Native (P. americana)">Plum, Native <span class="botanical-name">(P. americana)</span></option>
+                        <option value="Quince (Chaenomeles spp.)">Quince <span class="botanical-name">(Chaenomeles spp.)</span></option>
+                        <option value="Red Maple (Acer rubrum)">Red Maple <span class="botanical-name">(Acer rubrum)</span></option>
+                        <option value="Redbud (Cercis spp.)">Redbud <span class="botanical-name">(Cercis spp.)</span></option>
+                        <option value="Rhododendron (Rhododendron spp.)">Rhododendron <span class="botanical-name">(Rhododendron spp.)</span></option>
+                        <option value="Roses, Hybrid Tea (Rosas cvs.)">Roses, Hybrid Tea <span class="botanical-name">(Rosas cvs.)</span></option>
+                        <option value="Roses, Modern Shrub (Repeat bloomers)">Roses, Modern Shrub <span class="botanical-name">(Repeat bloomers)</span></option>
+                        <option value="Roses, Old-Fashioned Shrub (Once Bloomers)">Roses, Old-Fashioned Shrub <span class="botanical-name">(Once Bloomers)</span></option>
+                        <option value="Roses, Modern Climbing (Repeat bloomers)">Roses, Modern Climbing <span class="botanical-name">(Repeat bloomers)</span></option>
+                        <option value="Roses, Old-Fashioned Climbing (Once bloomers)">Roses, Old-Fashioned Climbing <span class="botanical-name">(Once bloomers)</span></option>
+                        <option value="Rose of Sharon (Hibiscus syriacus)">Rose of Sharon <span class="botanical-name">(Hibiscus syriacus)</span></option>
+                        <option value="Serviceberry, Shadblow (Amelanchier spp.)">Serviceberry, Shadblow <span class="botanical-name">(Amelanchier spp.)</span></option>
+                        <option value="Shrubby Cinquefoil (Potentilla fruticosa)">Shrubby Cinquefoil <span class="botanical-name">(Potentilla fruticosa)</span></option>
+                        <option value="Smoketree (Cotinus coggygria)">Smoketree <span class="botanical-name">(Cotinus coggygria)</span></option>
+                        <option value="Spirea (S. thunbergii, S. × vanhouttei, S. prunifolia)">Spirea <span class="botanical-name">(S. thunbergii, S. × vanhouttei, S. prunifolia)</span></option>
+                        <option value="Spirea, Japanese (S. japonica, S. × bumalda)">Spirea, Japanese <span class="botanical-name">(S. japonica, S. × bumalda)</span></option>
+                        <option value="Spirea, Meadowsweet (S. alba)">Spirea, Meadowsweet <span class="botanical-name">(S. alba)</span></option>
+                        <option value="Sumac (Rhus typhina)">Sumac <span class="botanical-name">(Rhus typhina)</span></option>
+                        <option value="Summersweet (Clethra alnifolia)">Summersweet <span class="botanical-name">(Clethra alnifolia)</span></option>
+                        <option value="Sweetspire, Virginia (Itea virginica)">Sweetspire, Virginia <span class="botanical-name">(Itea virginica)</span></option>
+                        <option value="Sweetshrub (Calycanthus floridus)">Sweetshrub <span class="botanical-name">(Calycanthus floridus)</span></option>
+                        <option value="Viburnum, Arrowood (e.g., V. dentatum)">Viburnum, Arrowood <span class="botanical-name">(e.g., V. dentatum)</span></option>
+                        <option value="Viburnum, Asian varieties (e.g., V. carlesii, V. plicatum)">Viburnum, Asian varieties <span class="botanical-name">(e.g., V. carlesii, V. plicatum)</span></option>
+                        <option value="Weigela, Asian varieties (W. florida)">Weigela, Asian varieties <span class="botanical-name">(W. florida)</span></option>
+                        <option value="Wisteria, American (W. frutescens)">Wisteria, American <span class="botanical-name">(W. frutescens)</span></option>
+                        <option value="Wisteria, Asian (W. sinensis, W. floribunda)">Wisteria, Asian <span class="botanical-name">(W. sinensis, W. floribunda)</span></option>
+                        <option value="Witch Hazel (Hamamelis virginiana)">Witch Hazel <span class="botanical-name">(Hamamelis virginiana)</span></option>
+                    </select>
+                </div>
+                
+                <div id="result" class="results">
+                    <h3 id="plantName"></h3>
+                    <div class="info-row">
+                        <div class="info-label">Pruning Category:</div>
+                        <div class="info-value" id="pruningCategory"></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Pruning Timing:</div>
+                        <div class="info-value" id="pruningTiming"></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Zone Range:</div>
+                        <div class="info-value" id="zoneRange"></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Bloom Season:</div>
+                        <div class="info-value" id="bloomSeason"></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Special Features:</div>
+                        <div class="info-value" id="tags"></div>
+                    </div>
+                    <div class="grow-guide-link">
+                        <p>For more detailed growing information, visit our <a href=" https://www.almanac.com/gardening/growing-guides#Shrubs%20and%20Bushes" target="_blank">Shrubs and Bushes Growing Guides</a> or <a href="https://www.almanac.com/gardening/growing-guides#Trees" target="_blank">Trees Growing Guides</a>.</p>
+                    </div>
+                    <div class="note">
+                        Note: Always use clean, sharp pruning tools and make cuts at a 45-degree angle just above a bud.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
-        // Initialize the plant data and functionality
         const plantData = [
-          {
+  {
     "Plant Name": "Abelia (A. x grandiflora)",
     "Pruning Wood Type": "New Wood",
     "Pruning Timing": "Late winter–early spring",
@@ -862,9 +826,11 @@
     "Bloom Time": "Fall to winter",
     "Tags": "🌿 Native, 🐝 Pollinator, 🌸 Ornamental"
   }
-        ];
-        const plantUrlMap = { 
-           "Beautyberry, American (Callicarpa americana)": "https://www.almanac.com/plant/beautyberry",
+];
+
+        // Mapping of plant names to their URL fragments
+        const plantUrlMap = {
+            "Beautyberry, American (Callicarpa americana)": "https://www.almanac.com/plant/beautyberry",
             "Butterfly Bush (Buddleia davidii)": "https://www.almanac.com/plant/butterfly-bush",
             "Cherry, Black (Prunus serotina)": "https://www.almanac.com/plant/cherries",
             "Crepe Myrtle (Lagerstromia spp.)": "https://www.almanac.com/plant/crepe-myrtles",
@@ -888,13 +854,11 @@
             "Roses, Hybrid Tea (Rosas cvs.)": "https://www.almanac.com/plant/roses",
             "Wisteria, American (W. frutescens)": "https://www.almanac.com/plant/wisteria",
             "Wisteria, Asian (W. sinensis, W. floribunda)": "https://www.almanac.com/plant/wisteria",
-         };
+        };
 
-        document.getElementById('plantSelect')?.addEventListener('change', function() {
+        document.getElementById('plantSelect').addEventListener('change', function() {
             const selectedPlantName = this.value;
             const resultsDiv = document.getElementById('result');
-            
-            if (!resultsDiv) return;
             
             // Find the plant object in the array that matches the selected name.
             const plantInfo = plantData.find(plant => plant['Plant Name'] === selectedPlantName);
@@ -913,35 +877,30 @@
                 const plantUrl = plantUrlMap[plantInfo['Plant Name']];
                 const plantNameElement = document.getElementById("plantName");
                 
-                if (plantUrl && plantNameElement) {
+                if (plantUrl) {
+                    // If we have a specific growing guide, make the name a link
                     plantNameElement.innerHTML = `<a href="${plantUrl}" target="_blank">${formattedPlantName}<span class="botanical-name">${botanicalPart}</span></a>`;
-                } else if (plantNameElement) {
+                } else {
+                    // If no specific guide, just show the name without link
                     plantNameElement.innerHTML = `${formattedPlantName}<span class="botanical-name">${botanicalPart}</span>`;
                 }
                 
-                // Safely update other elements
-                const pruningCategory = document.getElementById("pruningCategory");
-                const pruningTiming = document.getElementById("pruningTiming");
-                const zoneRange = document.getElementById("zoneRange");
-                const bloomSeason = document.getElementById("bloomSeason");
-                const tagsContainer = document.getElementById("tags");
-                
-                if (pruningCategory) pruningCategory.textContent = plantInfo['Pruning Wood Type'];
-                if (pruningTiming) pruningTiming.textContent = plantInfo['Pruning Timing'];
-                if (zoneRange) zoneRange.textContent = plantInfo['USDA Zones'];
-                if (bloomSeason) bloomSeason.textContent = plantInfo['Bloom Time'];
+                document.getElementById("pruningCategory").textContent = plantInfo['Pruning Wood Type'];
+                document.getElementById("pruningTiming").textContent = plantInfo['Pruning Timing'];
+                document.getElementById("zoneRange").textContent = plantInfo['USDA Zones'];
+                document.getElementById("bloomSeason").textContent = plantInfo['Bloom Time'];
 
-                if (tagsContainer) {
-                    tagsContainer.innerHTML = "";
-                    if (plantInfo.Tags) {
-                        const tags = plantInfo.Tags.split(", ");
-                        tags.forEach(tag => {
-                            const span = document.createElement("span");
-                            span.className = "tag";
-                            span.textContent = tag;
-                            tagsContainer.appendChild(span);
-                        });
-                    }
+                const tagsContainer = document.getElementById("tags");
+                tagsContainer.innerHTML = "";
+                
+                if (plantInfo.Tags) {
+                    const tags = plantInfo.Tags.split(", ");
+                    tags.forEach(tag => {
+                        const span = document.createElement("span");
+                        span.className = "tag";
+                        span.textContent = tag;
+                        tagsContainer.appendChild(span);
+                    });
                 }
                 
                 resultsDiv.classList.add('active');
