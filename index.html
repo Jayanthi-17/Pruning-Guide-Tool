@@ -13,9 +13,12 @@
         <div id="pruning-app">
             <div class="pruning-tool">
                 <div class="tool-header">
-                    <h1>Pruning Guide for Flowering Shrubs & Trees</h1>
+                    <h1>When to Prune Shrubs and Trees: Lookup Tool</h1>
                 </div>
                 <div class="tool-body">
+                    <div class="intro-text">
+                        <p>Wondering when to prune? Just select your shrub or tree to find the best time to cut back — based on how it blooms—so you don't miss next year's flowers.</p>
+                    </div>
                     <div class="select-container">
                         <label for="plantSelect">Select a Plant:</label>
                         <select id="plantSelect">
@@ -161,6 +164,12 @@
         #pruning-app .tool-body {
           padding: 25px;
         }
+        #pruning-app .intro-text {
+          margin-bottom: 20px;
+          font-size: 16px;
+          color: #555;
+          line-height: 1.5;
+        }
         #pruning-app .select-container {
           margin-bottom: 25px;
         }
@@ -275,6 +284,9 @@
             font-size: 22px;
             padding: 15px 10px;
           }
+          #pruning-app .intro-text {
+            font-size: 15px;
+          }
           #pruning-app .select-container select {
             padding: 12px 10px;
             font-size: 16px;
@@ -302,6 +314,9 @@
         @media (max-width: 400px) {
           #pruning-app .tool-header h1 {
             font-size: 20px;
+          }
+          #pruning-app .intro-text {
+            font-size: 14px;
           }
           #pruning-app .select-container label {
             font-size: 16px;
